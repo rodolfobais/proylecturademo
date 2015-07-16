@@ -97,15 +97,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Proyecto lectura</title>
+        <script src="web/js/jquery.min.js"></script>
         
+  
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="web/vistalibro/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="web/vistalibro/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="web/vistalibro/source/jquery.fancybox.css?v=2.1.5" media="screen" />
       
 
 		<link href="web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <script type="text/javascript" src="web/js/fancylibro.js"></script>
+        <script type="text/javascript" src="web/js/fancylibrosinlog.js"></script>
 		<link href='web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="web/css/responsiveslides.css">
-		<script src="web/js/jquery.min.js"></script>
+		
         
         
         

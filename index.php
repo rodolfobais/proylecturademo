@@ -1,3 +1,4 @@
+
 <?php 
 /*
  * A Design by W3layouts
@@ -17,7 +18,9 @@ $arrPages = array();
 
 $arrPages['index'] = "index.php";
 $arrPages['login'] = "login.php";
+$arrPages['home'] = "indexLogueado.php";
 $arrPages['registro'] = "registro.php";
+
 
 if(array_key_exists($page_name, $arrPages)){
 	include $browser_t.'/'.$arrPages[$page_name];

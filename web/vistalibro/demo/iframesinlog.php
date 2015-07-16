@@ -58,8 +58,7 @@
 	
 	<a href="#">+1</a>	Votos: 0<br/><br/>
 
-	<a href="#">Compartir</a> | <a href="#">Denunciar</a> | <a href="#">Descargar</a>
-
+	
 	</p>
 
 	
@@ -69,8 +68,7 @@
 
 				
 
-		Comentarios:<br/>
-		<textarea rows="10" cols="40"></textarea>
+		
 	</p>
 </body>
 </html>

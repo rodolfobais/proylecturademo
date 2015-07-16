@@ -20,36 +20,36 @@ array[1][nombre] -> libro 1342
 $arrSliderHeader = array();
 $pos = 0;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas recomendado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g3.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g2.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g1.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas descargado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g2.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g3.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g1.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
 
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Ultimos publicados";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g1.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g2.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/g3.jpg";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
 
 
@@ -61,13 +61,13 @@ foreach ($arrSliderHeader as $key => $value) {
 			<tr><td colspan = 3><h4>'.$value['titulo'].'</h4></td></tr>
       		<tr>
       			<td>
-	    			<a href="vistalibro/demo/iframe.html"><img  src="'.$value['contenido_0']['img'].'"></a><br/><p>'.$value['contenido_0']['txt'].'</p>		
+	    			<a class="fancybox-manual-b" href="javascript:;" name="1"><img  src="'.$value['contenido_0']['img'].'"></a><br/><p>'.$value['contenido_0']['txt'].'</p>		
 	    		</td>
 	    		<td>
-	    			<img src="'.$value['contenido_1']['img'].'"><br/><p>'.$value['contenido_1']['txt'].'</p>		
+	    			<a class="fancybox-manual-b" href="javascript:;" name="1"><img src="'.$value['contenido_1']['img'].'"></a><br/><p>'.$value['contenido_1']['txt'].'</p>		
 	    		</td>
 	      		<td>
-	      			<img src="'.$value['contenido_2']['img'].'"><br/><p>'.$value['contenido_2']['txt'].'</p>		
+	      			<a class="fancybox-manual-b" href="javascript:;" name="1"><img src="'.$value['contenido_2']['img'].'"></a><br/><p>'.$value['contenido_2']['txt'].'</p>		
 	      		</td>
 	   		</tr>
    		</table>
@@ -97,16 +97,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>Proyecto lectura</title>
-        
+        <script src="/proylecturademo/web/js/jquery.min.js"></script>
+
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="/proylecturademo/web/vistalibro/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/proylecturademo/web/vistalibro/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/proylecturademo/web/vistalibro/source/jquery.fancybox.css?v=2.1.5" media="screen" />
       
 
-		<link href="web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <script type="text/javascript" src="js/fancylibro.js"></script>
-		<link href='web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="web/css/responsiveslides.css">
-		<script src="web/js/jquery.min.js"></script>
-		<script src="web/js/responsiveslides.min.js"></script>
+        <script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
+		<link href='/proylecturademo/web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/proylecturademo/web/css/responsiveslides.css">
+		
+		<script src="/proylecturademo/web/js/responsiveslides.min.js"></script>
 		  <script>
 		    // You can also use "$(window).load(function() {"
 			    $(function () {
@@ -126,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!---start-logo---->
 				      <div class="logo">
 					      <a href="index.html">
-					      	<img src="web/images/logoPL.png" title="logo" height = 50 />
+					      	<img src="/proylecturademo/web/images/logoPL.png" title="logo" height = 50 />
 				      	</a>
 				      </div>
 				      <!---end-logo---->
@@ -134,8 +142,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="#"><img src="images/marker1.png" title="livehelp" />Login</a></li>
-							      <li><a href="#"><img src="images/marker1.png" title="Blog" />Registrese</a></li>
+							      
 							      <li><a href="#"><img src="images/marker1.png" title="customer report" />Mensajes</a></li>
 						      </ul>
 					      </div>
@@ -189,11 +196,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="section group">
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Mis trabajos</h4>
+                            <ul>
+                                <li><a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Proyecto 1</a></li>
+								<li><a href="#"><img  title="pointer "/>Proyecto 2</a></li>
+								<li><a href="#"><img  title="pointer "/>Proyecto 3</a></li>
+								<li><a href="#"><img  title="pointer "/>Proyecto 4</a></li>
+								<li><a href="#"><img  title="pointer "/>Proyecto 5</a></li>
+								<li><a href="#"><img  title="pointer "/>Proyecto 6</a></li>
+                                
+                            </ul>
 							 <?php echo $misTrabajos; ?>
 						     <div class="button"><span></span></div>
 						</div>
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Mi biblioteca</h4>
+                            <li><a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
+								<li><a href="#"><img  title="pointer "/>El ultimo de los programadores</a></li>
+								<li><a href="#"><img  title="pointer "/>Ensayo: Resistencia de la gelatina</a></li>
+								<li><a href="#"><img  title="pointer "/>Como programar y no morir virgen</a></li>
+								<li><a href="#"><img  title="pointer "/>Todo sobre la Jardineria</a></li>
+								<li><a href="#"><img  title="pointer "/>Como Mansar una sonda a Pluton</a></li>
 							 <!--<img src="web/images/g2.jpg"> -->
 							  
 							 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
@@ -217,26 +239,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
 								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
 								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								
 							</ul>
 						</div>
 					</div>
-					<div class="image group">
-						<div class="grid span_2_of_3">
-							<h3>Lorem Ipsum is simply dummy text </h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. </p>
-							<div class="button"><span><a href="#">Read More</a></span></div>
-						</div>
-						<div class="grid images_3_of_1">
-							<h3>Testimonials</h3>
-							<p><img src="web/images/quotes_alt.png"> &nbsp;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-							<a href="#">- Lorem ipsum.<span>Usa</span></a>
-						</div>
-					</div>
+					
 				</div>
 					<!---End-content---->
 					<div class="clear"> </div>

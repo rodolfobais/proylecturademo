@@ -1,4 +1,4 @@
-
+<script type="text/javascript">
 		$(document).ready(function() {
 			/*
 			 *  Simple image gallery. Uses default settings
@@ -144,7 +144,7 @@
 
 			$(".fancybox-manual-b").click(function() {
 				
-				var ref = '../web/vistalibro/demo/iframe.php?id=' + $(this).attr("name");
+				var ref = '/librofinal/demo/iframe.php?id=' + $(this).attr("name");
 				//alert(ref);
 				$.fancybox.open({
 					href : ref,
@@ -153,16 +153,6 @@
 				});
 			});
 
-            $(".fancybox-manual-s").click(function() {
-				
-				var ref = '../vistalibro/demo/iframesinlog.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
 
 			$("#fancybox-manual-c").click(function() {
 				$.fancybox.open([
@@ -187,3 +177,14 @@
 
 
 		});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>

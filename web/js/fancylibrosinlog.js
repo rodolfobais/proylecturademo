@@ -144,7 +144,7 @@
 
 			$(".fancybox-manual-b").click(function() {
 				
-				var ref = '../web/vistalibro/demo/iframe.php?id=' + $(this).attr("name");
+				var ref = '../vistalibrosinlog/demo/iframe.php?id=' + $(this).attr("name");
 				//alert(ref);
 				$.fancybox.open({
 					href : ref,
@@ -153,16 +153,7 @@
 				});
 			});
 
-            $(".fancybox-manual-s").click(function() {
-				
-				var ref = '../vistalibro/demo/iframesinlog.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
+           
 
 			$("#fancybox-manual-c").click(function() {
 				$.fancybox.open([
