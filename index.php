@@ -1,4 +1,3 @@
-
 <?php 
 /*
  * A Design by W3layouts
@@ -13,9 +12,23 @@ include 'classes/dataBase.class.php';
 include "app/config.php";
 include "app/detect.php";
 
-
 //echo $page_name;die;
+$arrPages = array();
 
+$arrPages['index'] = "index.php";
+$arrPages['login'] = "login.php";
+$arrPages['registro'] = "registro.php";
+
+if(array_key_exists($page_name, $arrPages)){
+	include $browser_t.'/'.$arrPages[$page_name];
+}else{
+	if ($page_name=='') {
+		include $browser_t.'/indexsinlog.php';
+	}else{
+		include $browser_t.'/404.php';
+	}
+}
+/*
 if ($page_name=='') {
 	include $browser_t.'/index.php';
 } elseif ($page_name=='index.php') {
@@ -33,5 +46,5 @@ if ($page_name=='') {
 } else {
 	include $browser_t.'/404.php';
 }
-
+*/
 ?>
