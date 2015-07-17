@@ -54,7 +54,7 @@
 		<a href="javascript:parent.jQuery.fancybox.open({href : '1_b.jpg', title : 'My title'});">Change content</a>
 	-->
 
-	<img id="image" src= "a33.jpg" > /><br/><br/>
+	<img id="image" src= "a22.jpg" > /><br/><br/>
 	
 	<a href="#">+1</a>	Votos: 0<br/><br/>
 

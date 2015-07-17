@@ -32,18 +32,19 @@
 
 <html>
 <head>
-	
+	<script type="text/javascript" src="fancylibro.js"></script>
+        
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    
 	<link rel="stylesheet" type="text/css" href="../source/iframe-style.css" />
 
 </head>
 <body>
 
 	<p id="title">
-					Titulo: <?php echo $nombre; ?> <br/>
-					Genero: <?php echo $genero; ?> <br/>
-					Autor: <?php echo $autor; ?> <br/>
+        <a>Titulo:</a> Limites de la Escuela </br>
+					Genero: Educativo </br>
+Autor: <a class="fancybox-manual-z" href="javascript:;" name="1">Emilio Blanco </a>
 	</p>
 
 	<p >
@@ -54,7 +55,7 @@
 		<a href="javascript:parent.jQuery.fancybox.open({href : '1_b.jpg', title : 'My title'});">Change content</a>
 	-->
 
-	<img id="image" src= "a33.jpg" > /><br/><br/>
+	<img id="image" src= "a11.jpg"  /><br/><br/>
 	
 	<a href="#">+1</a>	Votos: 0<br/><br/>
 
@@ -65,13 +66,12 @@
 	
 
 	<p id="description">
-		Seccion Review <br/><br/>
+		Sinopsis: la continua necesidad de entender cuales son los alcances de los sectores de estudios en sus distintos grados, ademas se intenta profundizar en la inportancia de la comunicacion y hasta donde un docente o institucion de involucrarse <br/><br/>
 
 				
 
 		Comentarios:<br/>
-		<textarea rows="10" cols="40"></textarea>
+		<textarea rows="5" cols="40"></textarea>
 	</p>
 </body>
 </html>
-  <?php mysql_close($conn); ?>

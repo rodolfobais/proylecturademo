@@ -20,47 +20,49 @@ array[1][nombre] -> libro 1342
 $arrSliderHeader = array();
 $pos = 0;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas recomendado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas descargado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
 
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Ultimos publicados";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g1.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g2.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ".$pos2;
 $pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/g3.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "asdDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat publicados ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
 
 
 $slider = '';
 foreach ($arrSliderHeader as $key => $value) {
 	$slider .= '
-	<li>	
-		<table>
-			<tr><td colspan = 3><h4>'.$value['titulo'].'</h4></td></tr>
-      		<tr>
-      			<td>
+	<li >	
+		<table >
+        
+			<tr ><td colspan = 3 ><h4>'.$value['titulo'].'</h4></td></tr>
+      		<tr >
+            <div  >
+      			<td >
 	    			<a class="fancybox-manual-b" href="javascript:;" name="1"><img  src="'.$value['contenido_0']['img'].'"></a><br/><p>'.$value['contenido_0']['txt'].'</p>		
 	    		</td>
 	    		<td>
@@ -69,7 +71,9 @@ foreach ($arrSliderHeader as $key => $value) {
 	      		<td>
 	      			<img src="'.$value['contenido_2']['img'].'"><br/><p>'.$value['contenido_2']['txt'].'</p>		
 	      		</td>
+            </div>
 	   		</tr>
+        
    		</table>
 	</li>';
 }
@@ -139,7 +143,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!---start-logo---->
 				      <div class="logo">
 					      <a href="index.html">
-					      	<img src="web/images/logoPL.png" title="logo" height = 50 />
+					      	<img style="max-width:100%;" src="web/images/logoPL.png" title="logo" height = 50 />
 				      	</a>
 				      </div>
 				      <!---end-logo---->
@@ -147,8 +151,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="index.php/login"><img src="images/marker1.png" title="livehelp" />Login</a></li>
-							      <li><a href="index.php/registro"><img src="images/marker1.png" title="Blog" />Registrese</a></li>
+							      <li><a href="index.php/login"><img src="web/images/marker1.png" title="livehelp" />Login</a></li>
+							      <li><a href="index.php/registro"><img src="web/images/marker1.png" title="Blog" />Registrese</a></li>
 							      
 						      </ul>
 					      </div>
