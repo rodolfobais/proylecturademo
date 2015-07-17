@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 //include_once 'classes/dataBase.class.php';
 $db = new dataBase('');
 $sql = "SELECT id, nombre FROM libro"; 
@@ -21,36 +21,36 @@ $arrSliderHeader = array();
 $pos = 0;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas recomendado";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ";
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas descargado";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ";
 
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Ultimos publicados";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 
 
 $slider = '';
@@ -79,8 +79,8 @@ foreach ($arrSliderHeader as $key => $value) {
 }
 
 $sql = "SELECT nombre FROM libro";
-$misTrabajosArr = $db -> QueryFetchArrayASSOC($sql);
-$misTrabajos = '<ul style = "list-style-type: circle;">';
+//$misTrabajosArr = $db -> QueryFetchArrayASSOC($sql);
+$misTrabajos = array();// '<ul style = "list-style-type: circle;">';
 foreach ($misTrabajosArr as $key => $value) {
 	$misTrabajos .= '
 	<li>

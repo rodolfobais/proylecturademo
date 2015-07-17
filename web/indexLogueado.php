@@ -1,6 +1,6 @@
 <?php
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 //include_once 'classes/dataBase.class.php';
 $db = new dataBase('');
 $sql = "SELECT id, nombre FROM libro"; 
@@ -21,13 +21,13 @@ $arrSliderHeader = array();
 $pos = 0;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas recomendado";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa";
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Lo mas descargado";
@@ -35,22 +35,22 @@ $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images
 $arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa";
 
 
 $pos++;$pos2 = 0;
 $arrSliderHeader[$pos]['titulo'] = "Ultimos publicados";
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ";
 $pos2++;
 $arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido".$pos2;
+$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
 
 
 $slider = '';
@@ -75,8 +75,8 @@ foreach ($arrSliderHeader as $key => $value) {
 }
 
 $sql = "SELECT nombre FROM libro";
-$misTrabajosArr = $db -> QueryFetchArrayASSOC($sql);
-$misTrabajos = '<ul style = "list-style-type: circle;">';
+//$misTrabajosArr = $db -> QueryFetchArrayASSOC($sql);
+$misTrabajos = array();//'<ul style = "list-style-type: circle;">';
 foreach ($misTrabajosArr as $key => $value) {
 	$misTrabajos .= '
 	<li>
@@ -152,31 +152,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 			</div>
 				<div class="clear"> </div>
-				<div class="header-nav">
-					<div class="wrap">
-					<div class="left-nav">
-						<ul>
-							<li class="active"><a href="web/index.php">Inicio</a></li>
-							<li><a href="web/about.php">Centro de Redaccion</a></li>
-							<li><a href="web/clients.php">Audiolibros</a></li>
-							<li><a href="web/services.php">Social</a></li>
-							<li><a href="web/contact.php">Administrador</a></li>
-						</ul>
-					</div>
-					<!--
-					<div class="right-social-icons">
-						<ul>
-							<li><a class="icon1" href="#"> </a></li>
-							<li><a class="icon2" href="#"> </a></li>
-							<li><a class="icon3" href="#"> </a></li>
-							<li><a class="icon4" href="#"> </a></li>
-						</ul>
-					</div>
-					-->
-					<div class="clear"> </div>
-				</div>
-				<!---start-search---->
-			</div>
+				<?php include("menu.php"); ?>
 			<!---end-header---->
 			<!--start-image-slider---->
 			<div class="wrap">
