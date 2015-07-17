@@ -26,8 +26,7 @@ $arrPages['audiolibros']['php'] = "audiolibros.php";$arrPages['audiolibros']['no
 $arrPages['social']['php'] = "services.php";$arrPages['social']['nombreenmenu'] = "Social";
 $arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
 
-$arrPages['menunuevo']['php'] = "comosellame.php";
-$arrPages['menunuevo']['nombreenmenu'] = "Nuevo menu";
+
 
 /*inicio
  * centro de redaccion
