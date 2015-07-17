@@ -1,5 +1,6 @@
-
 <?php 
+error_reporting(E_ALL);
+ini_set("display_errors", 0);
 /*
  * A Design by W3layouts
 Author: W3layouts
@@ -16,14 +17,22 @@ include "app/detect.php";
 //echo $page_name;die;
 $arrPages = array();
 
-$arrPages['index'] = "index.php";
-$arrPages['login'] = "login.php";
-$arrPages['home'] = "indexLogueado.php";
-$arrPages['registro'] = "registro.php";
+$arrPages['index']['php'] = "index.php";
+$arrPages['login']['php'] = "login.php";
+$arrPages['home']['php'] = "indexLogueado.php";$arrPages['home']['nombreenmenu'] = "Inicio";
+$arrPages['registro']['php'] = "registro.php";
+$arrPages['redactor']['php'] = "redactor.php";$arrPages['redactor']['nombreenmenu'] = "Centro de redaccion";
+$arrPages['audiolibros']['php'] = "audiolibros.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";
+$arrPages['social']['php'] = "social.php";$arrPages['social']['nombreenmenu'] = "Social";
+$arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
 
-
+/*inicio
+ * centro de redaccion
+ * audiolibros
+ * social
+ * administrador*/
 if(array_key_exists($page_name, $arrPages)){
-	include $browser_t.'/'.$arrPages[$page_name];
+	include $browser_t.'/'.$arrPages[$page_name]['php'];
 }else{
 	if ($page_name=='') {
 		include $browser_t.'/indexsinlog.php';
