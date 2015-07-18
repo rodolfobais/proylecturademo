@@ -182,7 +182,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#"><img  title="pointer "/>Proyecto 6</a></li>
                                 
                             </ul>
-							 <?php echo $misTrabajos; ?>
+							 
 						     <div class="button"><span></span></div>
 						</div>
 						<div class="grid_1_of_4 images_1_of_4">
@@ -199,25 +199,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Notificaciones</h4>
                             <ul>
-				                <li><a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Rodolfo Bais</a> Comentó <a class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>El ultimo de los programadores</a></li></li>
-				                <li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Cristian Ancutza</a> Votó <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Jorge Miranda</a> Compartió <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Esteban Quito</a> Votó <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como Mandar una sonda a Pluton</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Enzo Franchescoli</a> Comentó <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como programar y no morir virgen</a></li>
+				                <li><a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Rodolfo Bais</a> Coment&oacute; <a class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>El ultimo de los programadores</a></li></li>
+				                <li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Cristian Ancutza</a> Vot&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Jorge Miranda</a> Comparti&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Esteban Quito</a> Vot&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como Mandar una sonda a Pluton</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Enzo Franchescoli</a> Coment&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como programar y no morir virgen</a></li>
                             </ul>
 						     
 						</div>
 						<div class="grid_1_of_4 images_1_of_4 services">
 							<h4>Clasificados</h4>
 							<ul>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
 								
 							</ul>
 						</div>
