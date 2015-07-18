@@ -22,7 +22,7 @@ $arrPages['login']['php'] = "login.php";
 $arrPages['home']['php'] = "indexLogueado.php";$arrPages['home']['nombreenmenu'] = "Inicio";
 $arrPages['registro']['php'] = "registro.php";
 $arrPages['redactor']['php'] = "redactor.php";$arrPages['redactor']['nombreenmenu'] = "Centro de redaccion";
-$arrPages['audiolibros']['php'] = "audiolibros.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";
+$arrPages['audiolibros']['php'] = "clients.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";
 $arrPages['social']['php'] = "services.php";$arrPages['social']['nombreenmenu'] = "Social";
 $arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
 
