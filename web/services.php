@@ -48,7 +48,7 @@ $sql = "SELECT id, nombre FROM libro";
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="#"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
+							      <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
 							      <li><a href="login">Logout</a></li>
 						      </ul>
 					      </div>
