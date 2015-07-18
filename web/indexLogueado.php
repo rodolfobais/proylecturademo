@@ -208,17 +208,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						     
 						</div>
 						<div class="grid_1_of_4 images_1_of_4 services">
-							<h4>Clasificados</h4>
+							<h4>Clasificados</h4><span class="button"><a style="background: #AB7A20;" href="#" onclick = "abrirfancy('clasificados', 'nuevo-clasificado-fancy')">Nuevo clasificado</a></span>
 							<ul>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Duis aute irure dolor in reprehen</a></li>
-								
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Martin: Alguien quiere participar en una investigaci&oacute;n sobre nahuelito?</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Jorge Miranda: Necesito ayuda en un cuento sobre la historia de la UNLaM, alg&uacute;n interesado?</a></li>
 							</ul>
 						</div>
 					</div>

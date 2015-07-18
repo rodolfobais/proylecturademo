@@ -13,7 +13,7 @@ $sql = "SELECT id, nombre FROM libro";
 	<head>
 		<title>Proyecto lectura</title>
 		<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
-		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		
 		<link href='/proylecturademo/web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/proylecturademo/web/css/responsiveslides.css">
 		<link rel="stylesheet" href="/proylecturademo/web/css/login-style.css">
