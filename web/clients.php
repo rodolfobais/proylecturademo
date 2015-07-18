@@ -8,9 +8,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 	<head>
 		<title>legend Website Template | clients :: W3layouts</title>
+         <script src="/proylecturademo/web/js/jquery.min.js"></script>
+
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="/proylecturademo/web/vistamp3/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/proylecturademo/web/vistamp3/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/proylecturademo/web/vistamp3/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+        
+        
 		<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
 	</head>
 	<body>
 		<!---start-wrap---->
@@ -39,10 +51,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!---end-header---->
 			<div class="wrap">
 					<!---start-content---->
-					<div class="content">
+					<div class="grid_1_of_4 images_1_of_4">
+                       
+                        <div class="button"><span ><a class="fancybox-manual-mp3" href="javascript:;" name="1" style="background: #AB7A20;" href="#">Subir un Audio</a></span></div>
                         
-                        <div class="button"><span><a href="#">Subir un Audio</a></span></div>
-        
+                    </div>
+                    </br></br></br></br></br></br>
 						<div class="clients">
                             
 							<h5>Generar Audiolibros o Listas de Audiolibros</h5>
@@ -51,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							 <div id="columna_izq">
            
             <div class="cont">
-                <h5><label style="margin-left:10px;">Ingrese una búsqueda</label></h5>
+                <h5><label style="margin-left:10px;">b&uacute;squeda de audio</label></h5>
                 <input type="text" id="audiolibro" />
             </div>
             
@@ -106,8 +120,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     
                     
                     <select >
-                   	    <option value="0">Privada (sólo yo)</option>
-                        <option value="1">Pública</option>
+                   	    <option value="0">Privada (s&oacute;lo yo)</option>
+                        <option value="1">P&uacute;blica</option>
                         <option value="2">Compartida</option>
                     </select>
                     
@@ -124,7 +138,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="section group">
 							<h4>Mis Compilado Audiolibros</h4>
 							<ul>
-								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Trilogia el señor de los anillos</a></li>
+								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Trilogia el se&ntilde;or de los anillos</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Miedo a Volar</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Como Comer una naranja(avanzado)</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Para antes de dormir</a></li>
