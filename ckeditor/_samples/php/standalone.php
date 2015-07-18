@@ -25,16 +25,13 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 	</div>
 	<!-- This <fieldset> holds the HTML that you will usually find in your pages. -->
 	<fieldset title="Output">
-		<legend>Output</legend>
+		
 		<form action="../sample_posteddata.php" method="post">
-			<p>
-				<label for="editor1">
-					Editor 1:</label><br/>
-			</p>
+			
 			<p>
 			<?php
 			error_reporting(E_ALL);
-			ini_set("display_errors", 1);
+			ini_set("display_errors", 0);
 				// Include CKEditor class.
 				include_once "/var/www/librofinal/ckeditor/ckeditor.php";
 				// The initial value to be displayed in the editor.
