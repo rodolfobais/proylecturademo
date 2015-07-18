@@ -1,4 +1,4 @@
-
+<script type="text/javascript">
 		$(document).ready(function() {
 			/*
 			 *  Simple image gallery. Uses default settings
@@ -24,28 +24,6 @@
 
 			// Disable opening and closing animations, change title type
 			$(".fancybox-effects-b").fancybox({
-				openEffect  : 'none',
-				closeEffect	: 'none',
-
-				helpers : {
-					title : {
-						type : 'over'
-					}
-				}
-			});
-            
-            $(".fancybox-effects-x").fancybox({
-				openEffect  : 'none',
-				closeEffect	: 'none',
-
-				helpers : {
-					title : {
-						type : 'over'
-					}
-				}
-			});
-            
-            $(".fancybox-effects-z").fancybox({
 				openEffect  : 'none',
 				closeEffect	: 'none',
 
@@ -166,18 +144,7 @@
 
 			$(".fancybox-manual-b").click(function() {
 				
-				var ref = '../web/vistalibro/demo/iframe.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
-            
-            $(".fancybox-manual-x").click(function() {
-				
-				var ref = '../web/vistalibro2/demo/iframe.php?id=' + $(this).attr("name");
+				var ref = '/librofinal/demo/iframe.php?id=' + $(this).attr("name");
 				//alert(ref);
 				$.fancybox.open({
 					href : ref,
@@ -186,38 +153,6 @@
 				});
 			});
 
-            $(".fancybox-manual-y").click(function() {
-				
-				var ref = '../web/vistalibro3/demo/iframe.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
-            
-            $(".fancybox-manual-z").click(function() {
-				
-				var ref = '../web/vistausuario/demo/iframe.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
-            
-            $(".fancybox-manual-mp3").click(function() {
-				
-				var ref = '../web/vistamp3/demo/iframe.php?id=' + $(this).attr("name");
-				//alert(ref);
-				$.fancybox.open({
-					href : ref,
-					type : 'iframe',
-					padding : 5
-				});
-			});
 
 			$("#fancybox-manual-c").click(function() {
 				$.fancybox.open([
@@ -242,3 +177,14 @@
 
 
 		});
+	</script>
+	<style type="text/css">
+		.fancybox-custom .fancybox-skin {
+			box-shadow: 0 0 50px #222;
+		}
+
+		body {
+			max-width: 700px;
+			margin: 0 auto;
+		}
+	</style>
