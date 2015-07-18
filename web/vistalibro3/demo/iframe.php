@@ -42,9 +42,9 @@
 <body>
 
 	<p id="title">
-        <a>Titulo:</a> Limites de la Escuela </br>
-					Genero: Educativo </br>
-Autor: <a class="fancybox-manual-z" href="javascript:;" name="1">Emilio Blanco </a>
+        <span class="titulos">Titulo:</span> <span class="nombre">Limites de la Escuela </span> </br>
+		<span class="titulos">Genero:</span> <span class="nombre">Educativo </span></br>
+		<span class="titulos"> Autor: <span> <a class="fancybox-manual-z" href="javascript:;" name="1">Emilio Blanco </a>
 	</p>
 
 	<p >
@@ -57,21 +57,21 @@ Autor: <a class="fancybox-manual-z" href="javascript:;" name="1">Emilio Blanco <
 
 	<img id="image" src= "a11.jpg"  /><br/><br/>
 	
-	<a href="#">+1</a>	Votos: 0<br/><br/>
+	<a href="#">+1</a>	Votos: 6<br/><br/>
 
-	<a href="#">Compartir</a> | <a href="#">Denunciar</a> | <a href="#">Descargar</a>
+	<input type="button" class="btn" value="Compartir" /> | <input type="button" class="btn" value="Denunciar" /> | <input type="button" class="btn" value="Descargar" />
 
 	</p>
 
-	
-
 	<p id="description">
-		Sinopsis: la continua necesidad de entender cuales son los alcances de los sectores de estudios en sus distintos grados, ademas se intenta profundizar en la inportancia de la comunicacion y hasta donde un docente o institucion de involucrarse <br/><br/>
+		<span class="comment">Sinopsis: </span><br/><br/>
+
+		La continua necesidad de entender cuales son los alcances de los sectores de estudios en sus distintos grados, ademas se intenta profundizar en la importancia de la comunicacion y hasta donde un docente o institucion de involucrarse <br/><br/>
 
 				
 
-		Comentarios:<br/>
-		<textarea rows="5" cols="40"></textarea>
+		<span class="comment">Comentarios:</span><br/>
+		<img class="imagen" src="/proylecturademo/web/images/fbcomment.png" />
 	</p>
 </body>
 </html>
