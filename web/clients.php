@@ -158,16 +158,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="footer"> 
 						<div class="wrap"> 
 						<div class="footer-left">
-							<ul>
-								<li><a href="index.php">Inicio</a></li>
-								<li><a href="about.php">Centro de Redaccion</a></li>
-								<li><a href="clients.php">Audiolibros</a></li>
-								<li><a href="services.php">Social</a></li>
-								<li><a href="contact.php">Administrador</a></li>
-							</ul>
+							&copy; 2015 ProyectoLectura.com
 						</div>
 						<div class="footer-right">
-							<p>Legend &#169 All Rights Reserved | Design By <a href="http://w3layouts.com/">W3Layouts</a></p>
+							<p> </p>
 						</div>
 						<div class=="clear"> </div>
 					</div>

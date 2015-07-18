@@ -230,10 +230,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="footer"> 
 						<div class="wrap"> 
 						<div class="footer-left">
-							Users online: pepe argento | Juana de arco | Jorgito
+							&copy; 2015 ProyectoLectura.com 
 						</div>
 						<div class="footer-right">
-							<p>REPRODUCTOR (no asociado al aparato)</p>
+							<p></p>
 						</div>
 						<div class=="clear"> </div>
 					</div>

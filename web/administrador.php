@@ -12,12 +12,27 @@ $sql = "SELECT id, nombre FROM libro";
 <html>
 	<head>
 		<title>Proyecto lectura</title>
+
+        <script src="/proylecturademo/web/js/jquery.min.js"></script>
+
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="/proylecturademo/web/vistagridusuario/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="/proylecturademo/web/vistagridusuario/source/jquery.fancybox.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="/proylecturademo/web/vistagridusuario/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
 		<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
 		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
+
 		<link href='/proylecturademo/web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/proylecturademo/web/css/responsiveslides.css">
+		
 		<link rel="stylesheet" href="/proylecturademo/web/css/login-style.css">
-		<script src="/proylecturademo/web/js/jquery.min.js"></script>
+		
+
 		<script src="/proylecturademo/web/js/responsiveslides.min.js"></script>
 		  <script>
 		    // You can also use "$(window).load(function() {"
@@ -66,34 +81,36 @@ $sql = "SELECT id, nombre FROM libro";
 					<!---start-content---->
 					<div class="content">
 
-							<h4 class="titulo"> Social</h4>
-								<div class="seccion1">
-									<h4 class="innertitle">&iquest;A qu&eacute; usuario buscas?</h4>
+							<h4 class="titulo"> Administrador</h4>
+								<div class="seccion1_b">	
+										<h4 class="innertitle"> Administrar</h4><br><br><br>
 
-									<input type="text" id="usuariobuscado" class="usuariobuscado" placeholder="Ingrese el nombre de usuario" />
+									    <ul>
 
-									<span id="btn" class="btnbuscar" onclick="buscarUnUsuario();">Buscar</span>
+									  <!--  <li class="link"><a a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Usuarios</a></li>
+											<img class="grilla" src="/proylecturademo/web/images/grillausuario.png">
 
-									<div id="resultadosDeUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;"></div>
-									<div id="resultadosDeAgregarUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;color:#666;"></div>
-									
+										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Libros</a></li>
+											<img class="grilla" src="/proylecturademo/web/images/grillalibro.png">
+									-->
+
+										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Generos</a></li>
+											<img class="grilla" src="/proylecturademo/web/images/grillagenero.png">
+
+
+										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Autores</a></li>
+											<img class="grilla" src="/proylecturademo/web/images/grillaautor.png">
+
+										</ul>
+
 								</div>		
 						
 								<div class="seccion2">
-									<h4 class="innertitle"> Mis amistades</h4>
-
-										<div class="amigos">
-											<ul style="list-style-type:circle">
-											  <li><a class="link" href="#">Martin</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											  <li><a class="link" href="#">Facundo</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											  <li><a class="link" href="#">Laura</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											</ul>
-										</div>
-								</div>
-						
+													
+					
+								</div>							
 								<div class="seccion3">
-									<h4 class="innertitle">	Mis solicitudes pendientes</h4>
-										<div class="amigos"> Invitacion de Carlos pendiente de aceptacion/rechazo.	</div>
+			
 								</div>
 
 						<div class="section group">
@@ -108,7 +125,7 @@ $sql = "SELECT id, nombre FROM libro";
 					<div class="footer"> 
 						<div class="wrap"> 
 						<div class="footer-left">
-							&copy; 2015 ProyectoLectura.com 
+								&copy; 2015 ProyectoLectura.com 
 						</div>
 						<div class="footer-right">
 							<p></p>

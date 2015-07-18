@@ -4,3 +4,9 @@
   font-weight: 400;
   src: local('Ropa Sans'), local('RopaSans-Regular'), url(QnguTd82yEUxQZygH2gm8KCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
 }
+
+.footer-left{
+	text-align: center;
+	font-size: 15px;
+	text-decoration: none;
+}
