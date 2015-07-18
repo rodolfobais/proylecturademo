@@ -57,33 +57,7 @@ $sql = "SELECT id, nombre FROM libro";
 				</div>
 			</div>
 				<div class="clear"> </div>
-				<div class="header-nav">
-					<div class="wrap">
-					<div class="left-nav">
-						
-						<ul>
-							<li><a href="/proylecturademo/web/index.php">Inicio</a></li>
-							<li><a href="/proylecturademo/web/about.php">Centro de Redaccion</a></li>
-							<li><a href="/proylecturademo/web/clients.php">Audiolibros</a></li>
-							<li class="active"><a href="/proylecturademo/web/services.php">Social</a></li>
-							<li><a href="/proylecturademo/web/contact.php">Administrador</a></li>
-						</ul>
-					
-					</div>
-					
-					<div class="right-social-icons">
-						<ul>
-							<li><a class="icon1" href="#"> </a></li>
-							<li><a class="icon2" href="#"> </a></li>
-							<li><a class="icon3" href="#"> </a></li>
-							<li><a class="icon4" href="#"> </a></li>
-						</ul>
-					</div>
-					
-					<div class="clear"> </div>
-				</div>
-				<!---start-search---->
-			</div>
+				<?php include_once 'menu.php' ?>
 			<!---end-header---->
 			<!--start-image-slider---->
 			<div class="wrap">
