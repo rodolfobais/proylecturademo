@@ -17,7 +17,7 @@ include "app/detect.php";
 //echo $page_name;die;
 $arrPages = array();
 
-$arrPages['index']['php'] = "index.php";
+$arrPages['index']['php'] = "indexsinlog.php";
 $arrPages['login']['php'] = "login.php";
 $arrPages['home']['php'] = "indexLogueado.php";$arrPages['home']['nombreenmenu'] = "Inicio";
 $arrPages['registro']['php'] = "registro.php";
@@ -25,14 +25,10 @@ $arrPages['redactor']['php'] = "redactor.php";$arrPages['redactor']['nombreenmen
 $arrPages['audiolibros']['php'] = "clients.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";
 $arrPages['social']['php'] = "services.php";$arrPages['social']['nombreenmenu'] = "Social";
 $arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
+$arrPages['logout']['php'] = "indexsinlog.php";
 
 
 
-/*inicio
- * centro de redaccion
- * audiolibros
- * social
- * administrador*/
 if(array_key_exists($page_name, $arrPages)){
 	include $browser_t.'/'.$arrPages[$page_name]['php'];
 }else{

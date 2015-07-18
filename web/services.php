@@ -48,8 +48,8 @@ $sql = "SELECT id, nombre FROM libro";
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="/proylecturademo"><img src="/proylecturademo/web/images/marker1.png" title="livehelp" />Logout</a></li>
-							      <li><a href="#"><img src="/proylecturademo/web/images/marker1.png" title="customer report" />Mensajes</a></li>
+							      <li><a href="#"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
+							      <li><a href="login">Logout</a></li>
 						      </ul>
 					      </div>
 				      </div>
