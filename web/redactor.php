@@ -134,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="wrap">
 				<!---start-logo---->
 				      <div class="logo">
-					      <a href="index.html">
+					      <a href="/proylecturademo/">
 					      	<img style="max-width:100%;" src="/proylecturademo/web/images/logoPL.png" title="logo" height = 50 />
 				      	</a>
 				      </div>

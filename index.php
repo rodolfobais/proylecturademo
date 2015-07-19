@@ -26,9 +26,12 @@ $arrPages['audiolibros']['php'] = "clients.php";$arrPages['audiolibros']['nombre
 $arrPages['social']['php'] = "services.php";$arrPages['social']['nombreenmenu'] = "Social";
 $arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
 $arrPages['logout']['php'] = "indexsinlog.php";
+$arrPages['mensajes']['php'] = "mensajes.php";
 
-
-
+if ($browser_t == "mobile") {
+	$browser_t = "smartphone";
+}
+//$browser_t = "smartphone";
 if(array_key_exists($page_name, $arrPages)){
 	include $browser_t.'/'.$arrPages[$page_name]['php'];
 }else{

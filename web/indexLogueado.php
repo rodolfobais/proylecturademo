@@ -134,7 +134,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="wrap">
 				<!---start-logo---->
 				      <div class="logo">
-					      <a href="index.html">
+					      <a href="/proylecturademo/">
 					      	<img style="max-width:100%;" src="/proylecturademo/web/images/logoPL.png" title="logo" height = 50 />
 				      	</a>
 				      </div>
@@ -220,18 +220,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-					<div class="footer"> 
-						<div class="wrap"> 
-						<div class="footer-left">
-							Users online: pepe argento | Juana de arco | Jorgito
-						</div>
-						<div class="footer-right">
-							<p>REPRODUCTOR (no asociado al aparato)</p>
-						</div>
-						<div class=="clear"> </div>
-					</div>
-					<div class="clear"> </div>
-		<!---end-wrap---->
-		</div>
+				
+				<?php include 'footerlogueado.php';?>
 	</body>
 </html>

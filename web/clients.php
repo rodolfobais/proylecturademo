@@ -32,7 +32,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="wrap">
 				<!---start-logo---->
 				<div class="logo">
-					<a href="index.html"><img src="/proylecturademo/web/images/logoPL.png" title="logo" /></a>
+					<a href="/proylecturademo/"><img src="/proylecturademo/web/images/logoPL.png" title="logo" /></a>
 				</div>
 				<!---end-logo---->
 				<!---start-search---->

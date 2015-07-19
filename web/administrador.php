@@ -83,23 +83,22 @@ $sql = "SELECT id, nombre FROM libro";
 
 							<h4 class="titulo"> Administrador</h4>
 								<div class="seccion1_b">	
-										<h4 class="innertitle"> Administrar</h4><br><br><br>
+									<h4 class="innertitle"> Administrar</h4><br><br><br>
+								    <ul>
 
-									    <ul>
-
-									  <!--  <li class="link"><a a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Usuarios</a></li>
-											<img class="grilla" src="/proylecturademo/web/images/grillausuario.png">
+									   <li class="link"><a a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Usuarios</a></li>
+											<img class="grilla" src="/proylecturademo/web/images/grillausuario.png" style="max-width: 5000" width = 500>
 
 										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Libros</a></li>
-											<img class="grilla" src="/proylecturademo/web/images/grillalibro.png">
-									-->
+											<img class="grilla" src="/proylecturademo/web/images/grillalibro.png" style="max-width: 5000">
+									
 
 										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Generos</a></li>
-											<img class="grilla" src="/proylecturademo/web/images/grillagenero.png">
+											<img class="grilla" src="/proylecturademo/web/images/grillagenero.png" style="max-width: 5000">
 
 
 										<li class="link"><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Autores</a></li>
-											<img class="grilla" src="/proylecturademo/web/images/grillaautor.png">
+											<img class="grilla" src="/proylecturademo/web/images/grillaautor.png" style="max-width: 5000">
 
 										</ul>
 
