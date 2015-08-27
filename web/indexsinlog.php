@@ -151,8 +151,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="index.php/login"><img src="web/images/marker1.png" title="livehelp" />Login</a></li>
-							      <li><a href="index.php/registro"><img src="web/images/marker1.png" title="Blog" />Registrese</a></li>
+							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
+							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></li>
 							      
 						      </ul>
 					      </div>
@@ -177,12 +177,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						 <!-- Slideshow 2 -->
 					</div>
 					<!--End-image-slider---->
-					<!---start-content---->
-					
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-					
+					<div class="footer"> 
+						<div class="wrap"> 
+							<div class="footer-left">
+									&copy; 2015 ProyectoLectura.com 
+							</div>
+							
+							<div class="footer-right">
+								<p></p> </div>
+							
+							<div class=="clear"> </div>
+						</div>
+						<div class="clear"> </div>
+					</div>
+		<!---end-wrap---->
 	</body>
 </html>
 

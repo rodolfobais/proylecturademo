@@ -84,6 +84,43 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   return $data;
 		}
 
+		//Registracion usuario
+
+		session_start();
+		$conn = mysql_connect("localhost","root","");
+		mysql_select_db("librofinal",$conn);
+
+		$nombre = $_POST["nombre"];
+		$mail = $_POST["mail"];
+		$password = $_POST["pass"];
+		$cpassword = $_POST["pass1"];
+
+		$query = "select 1 from usuario;";
+		$resultado = mysql_query($query, $conn);
+		$filas = mysql_num_rows($resultado);
+
+		$query = "select nombre from usuario where nombre = '".$nombre."';";
+		$resultado = mysql_query($query, $conn);
+
+		$usuarios_existentes = mysql_num_rows($resultado);
+
+		if($usuarios_existentes  > 0)
+		{
+		    mysql_close($conn);
+		    //header('location: registro');
+		}
+		else{
+			$_SESSION["usuarioLogueado"] = $nombre;
+		    $_SESSION["rolUsuario"] = "nombre";
+			$id_usuario = $filas + 1;
+		    $_SESSION["idUsuarioLogueado"] = $id_usuario;
+			$insert= "insert into usuario(id,nombre, mail, password, admin) values	(".$id_usuario.",'".$nombre."','".$mail."','".$password."','nombre');";
+			$resultado = mysql_query($insert, $conn);
+		    mysql_close($conn);	
+			header('location: home');
+		}	
+
+
 
 		?>
 
@@ -105,8 +142,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="login"><img src="/proylecturademo/web/images/marker1.png" title="livehelp" />Login</a></li>
-							      <li><a href="registro"><img src="/proylecturademo/web/images/marker1.png" title="Blog" />Registrese</a></li>
+							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
+							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></li>
 							      
 						      </ul>
 					      </div>
@@ -196,15 +233,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				</div>
 					<!---End-content---->
-					<div class="clear"> </div>
+				<div class="clear"> </div>
 				</div>
 					<div class="footer"> 
 						<div class="wrap"> 
 						<div class="footer-left">
-							
+							Users online: pepe argento | Juana de arco | Jorgito
 						</div>
 						<div class="footer-right">
-							<p></p>
+							<p>REPRODUCTOR (no asociado al aparato)</p>
 						</div>
 						<div class=="clear"> </div>
 					</div>

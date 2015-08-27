@@ -106,9 +106,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="#"><img src="web/images/marker1.png" title="livehelp" />Login</a></li>
-							      <li><a href="#"><img src="web/images/marker1.png" title="Blog" />Registrese</a></li>
-							      <li><a href="#"><img src="web/images/marker1.png" title="customer report" />Mensajes</a></li>
+							      <li><a href="#"> <span  class="botones">Login</span></a></li>
+							      <li><a href="#"> <span  class="botones">Registrese</span></a></li>
+							      <li><a href="#"><span  class="botones">Mensajes</span></a></li>
 						      </ul>
 					      </div>
 				      </div>

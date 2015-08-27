@@ -143,8 +143,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
-							      <li><a href="login">Logout</a></li>
+							      <li><a href="#" class="botones" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
+							      <li><a href="login" class="botones">Logout</a></li>
 						      </ul>
 					      </div>
 				      </div>
