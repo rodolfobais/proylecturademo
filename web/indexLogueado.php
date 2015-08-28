@@ -3,88 +3,36 @@ error_reporting(E_ALL);
 
 //include_once 'classes/dataBase.class.php';
 $db = new dataBase('');
-$sql = "SELECT id, nombre FROM libro"; 
-//$result = $db -> QueryFetchArrayASSOC($sql);
-//echo "<pre>"; print_r($result);echo "</pre>";
-/*
-array[0][id] -> 1
-array[0][nombre] -> el lago de los cisnes
-
-
-array[1][id] -> 1234543654765
-array[1][nombre] -> libro 1342
-*/
-
-
-
-$arrSliderHeader = array();
-$pos = 0;$pos2 = 0;
-$arrSliderHeader[$pos]['titulo'] = "Lo mas recomendado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia";
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa";
-
-$pos++;$pos2 = 0;
-$arrSliderHeader[$pos]['titulo'] = "Lo mas descargado";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia".$pos2;
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa";
-
-
-$pos++;$pos2 = 0;
-$arrSliderHeader[$pos]['titulo'] = "Ultimos publicados";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a11.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Proyecto de educacion de la ciudad de mexico, material docente de calidad educativa ";
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a22.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Ensayo de materiales de PVC para utilizacion en laboratorio de microbiologia ";
-$pos2++;
-$arrSliderHeader[$pos]['contenido_'.$pos2]['img'] = "/proylecturademo/web/images/a33.jpg";
-$arrSliderHeader[$pos]['contenido_'.$pos2]['txt'] = "Inspirada en el universo de Star Trek, viajeros perdidos en un planeta desconocido";
-
-
+$sql = "SELECT id, descrp FROM slider_categ"; 
+$slider_categ = $db -> QueryFetchArrayASSOC($sql);
+//echo "<pre>"; print_r($slider_categ);echo "</pre>";die;
 $slider = '';
-foreach ($arrSliderHeader as $key => $value) {
+foreach ($slider_categ as $value) {
+	$sql = "SELECT s.id, l.image, l.sinopsis, l.nombre
+			FROM slider_mae AS s
+			INNER JOIN libro l ON s.id_libro = l.id 
+			WHERE categoria = '".$value['id']."' 
+			ORDER BY posicion ASC";
+	$slider_mae = $db -> QueryFetchArrayASSOC($sql);
+	//echo "<pre>"; print_r($slider_mae);echo "</pre>";
 	$slider .= '
-	<li>	
-		<table>
-			<tr><td colspan = 3><h3>'.$value['titulo'].'</h3></td></tr>
-      		<tr>
-      			<td>
-	    			<a class="fancybox-manual-b" href="javascript:;" name="1"><img  src="'.$value['contenido_0']['img'].'"></a><br/><p>'.$value['contenido_0']['txt'].'</p>		
-	    		</td>
-	    		<td>
-	    			<a class="fancybox-manual-x" href="javascript:;" name="1"><img src="'.$value['contenido_1']['img'].'"></a><br/><p>'.$value['contenido_1']['txt'].'</p>		
-	    		</td>
-	      		<td>
-	      			<a class="fancybox-manual-y" href="javascript:;" name="1"><img src="'.$value['contenido_2']['img'].'"></a><br/><p>'.$value['contenido_2']['txt'].'</p>		
-	      		</td>
-	   		</tr>
-   		</table>
-	</li>';
-}
-
-$sql = "SELECT nombre FROM libro";
-//$misTrabajosArr = $db -> QueryFetchArrayASSOC($sql);
-$misTrabajos = array();//'<ul style = "list-style-type: circle;">';
-foreach ($misTrabajosArr as $key => $value) {
-	$misTrabajos .= '
 	<li>
-		<a href="#">'.$value['nombre'].'</a>
+		<table cellpadding="50">
+			<tr><td colspan = 3><center><h1>'.$value['descrp'].'</h1></center></td></tr>
+			<tr>';
+	foreach ($slider_mae as $value2) {
+		$slider .= '
+				<td>
+					<center>
+						<a href="#" onclick = "abrirfancy(\''.$value2['id'].'\', \'vistalibro\')" name="1"><img  src="'.$value2['image'].'"></a><br/><p style="width: 90%"><b style="font-weight: bold;">'.$value2['nombre'].': </b>'.$value2['sinopsis'].'</p>
+					</center>
+				</td>';
+	}	
+	$slider .= '
+			</tr>
+		</table>
 	</li>';
 }
-$misTrabajos .= '</ul>';
-//echo "<pre>"; print_r($misTrabajosArr);echo "</pre>";
 ?>
 
 <!--
