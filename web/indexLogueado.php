@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+$conn = mysql_connect("localhost","root","");
+mysql_select_db("librofinal",$conn);
+
+
 error_reporting(E_ALL);
 
 //include_once 'classes/dataBase.class.php';
@@ -141,9 +147,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <!---end-logo---->
 				      <!---start-search---->
 				      <div class="top-search-bar">
+					      <div>Bienvenido - <?php if (isset($_SESSION['login_user'])){ echo $_SESSION['login_user'];}else if (isset($_COOKIE[$cookie_user])){ echo $_COOKIE[$cookie_user];}?></div>
+						    
 					      <div class="header-top-nav">
-						      <ul>
-							      <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><span  class="botones">Mensajes</span></a></li>
+					      	  <ul>
+						      	  <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><span  class="botones">Mensajes</span></a></li>
 							      <li><a href="login"><span  class="botones">Logout</span></a></li>
 						      </ul>
 					      </div>
