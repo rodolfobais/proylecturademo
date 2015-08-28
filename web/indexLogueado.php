@@ -1,10 +1,13 @@
 <?php
+<<<<<<< HEAD
 session_start();
 
 $conn = mysql_connect("localhost","root","");
 mysql_select_db("librofinal",$conn);
 
 
+=======
+>>>>>>> 746143a734a422cb1d6c1327f1aaa1ef4a947ac3
 error_reporting(E_ALL);
 
 //include_once 'classes/dataBase.class.php';
@@ -18,6 +21,7 @@ foreach ($slider_categ as $value) {
 			FROM slider_mae AS s
 			INNER JOIN libro l ON s.id_libro = l.id 
 			WHERE categoria = '".$value['id']."' 
+<<<<<<< HEAD
 			ORDER BY posicion ASC";
 	$slider_mae = $db -> QueryFetchArrayASSOC($sql);
 	//echo "<pre>"; print_r($slider_mae);echo "</pre>";
@@ -37,6 +41,27 @@ foreach ($slider_categ as $value) {
 	$slider .= '
 			</tr>
 		</table>
+=======
+			ORDER BY posicion ASC";
+	$slider_mae = $db -> QueryFetchArrayASSOC($sql);
+	//echo "<pre>"; print_r($slider_mae);echo "</pre>";
+	$slider .= '
+	<li>
+		<table cellpadding="50">
+			<tr><td colspan = 3><center><h1>'.$value['descrp'].'</h1></center></td></tr>
+			<tr>';
+	foreach ($slider_mae as $value2) {
+		$slider .= '
+				<td>
+					<center>
+						<a href="#" onclick = "abrirfancy(\''.$value2['id'].'\', \'vistalibro\')" name="1"><img  src="'.$value2['image'].'"></a><br/><p style="width: 90%"><b style="font-weight: bold;">'.$value2['nombre'].': </b>'.$value2['sinopsis'].'</p>
+					</center>
+				</td>';
+	}	
+	$slider .= '
+			</tr>
+		</table>
+>>>>>>> 746143a734a422cb1d6c1327f1aaa1ef4a947ac3
 	</li>';
 }
 ?>
