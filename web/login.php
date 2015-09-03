@@ -88,42 +88,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 		// si el usuario y password son validos devuelve 1 en count
 		if($count==1)
-		{
+		
+{
 		session_start();
-		$_SESSION['login_user']=$usuario;
-		$_SESSION["idUsuarioLogueado"] = $row[1];
-        $_SESSION["rolUsuario"] = $row[2];
-
-        
-        $hour = time() + 3600;
-		setcookie('ID_my_site', $_POST['mail'], $hour);
-
-		$year = time() + 31536000;
-		setcookie('remember_me', $_POST['mail'], $year);
+			$_SESSION['login_user']=$usuario;
+			$_SESSION["idUsuarioLogueado"] = $row[1];
+        	$_SESSION["rolUsuario"] = $row[2];
+        	
+        //$cookie_user = $_POST['mail'];
+        $remember = $_POST['remember'];
 		
-		
-		if($_POST['remember']) {
-		setcookie('remember_me', $_POST['mail'], $year);
-		}
-		elseif(!$_POST['remember']) {
-			if(isset($_COOKIE['remember_me'])) {
-				$past = time() - 100;
-				setcookie(remember_me, gone, $past);
-			}
-		}
-
+		if($remember == 1) 
+		{
+		setcookie($cookie_user, $_POST['mail'], time() + (86400 * 30), "/"); // 86400 = 1 day
 		header('location: home');
 		$message ="Login exitoso!";
 		}
-		else 
+		else
 		{
-		//header('location: login');
+		header('location: login');
 		$error="Usuario o Password invalido";
 		}
+		
+}
 	mysql_close($conn);
 ?>
 
-		?>
 
 	</head>
 	<body>
@@ -196,8 +186,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div id="campos">
 							<form id="user_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 						   	<br>
-						   	<span class="label"> E-mail: </span><br><input type="text"  id="mail" name="mail" class="login" size="25" value="<?php
-echo $_COOKIE['remember_me']; ?>"/>
+						   	<span class="label"> E-mail: </span><br><input type="text"  id="mail" name="mail" class="login" size="25" value=""/>
 						   	<span class="error"><?php echo $mailErr;?></span> <br><br>
 						   	<span class="label"> Password: </span><br><input type="password" value=""  id="password" name="password" class="login" size="25"/>
 						   	<span class="error"><?php echo $passErr;?></span> <br><br>

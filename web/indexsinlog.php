@@ -1,4 +1,15 @@
 <?php
+session_start();
+
+$conn = mysql_connect("localhost","root","");
+mysql_select_db("librofinal",$conn);
+
+
+
+			if(isset($_COOKIE[$cookie_user])) {
+				header('location: index.php/home');
+			}
+
 error_reporting(E_ALL);
 
 //include_once 'classes/dataBase.class.php';
@@ -152,8 +163,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					      <div class="header-top-nav">
 						      <ul>
 							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
-							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></li>
-							      
+							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></a></li>
+					  	 		      
 						      </ul>
 					      </div>
 				      </div>
