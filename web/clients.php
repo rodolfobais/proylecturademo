@@ -1,9 +1,4 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -13,52 +8,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <script type="text/javascript" src="/proylecturademo/web/js/footer.js"></script>
             <script type="text/javascript" src="/proylecturademo/web/js/crearlista.js"></script>
             <script type="text/javascript" src="/proylecturademo/web/js/buscarUsuarios.js"></script>
-	<!-- Add mousewheel plugin (this is optional) -->
-	<script type="text/javascript" src="/proylecturademo/web/vistamp3/lib/jquery.mousewheel-3.0.6.pack.js"></script>
-    
-	<!-- Add fancyBox main JS and CSS files -->
-	<script type="text/javascript" src="/proylecturademo/web/vistamp3/source/jquery.fancybox.js?v=2.1.5"></script>
-	<link rel="stylesheet" type="text/css" href="/proylecturademo/web/vistamp3/source/jquery.fancybox.css?v=2.1.5" media="screen" />
-        
-        
-		<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
-		<meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-		<link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'>
-        <script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
+            <!-- Add mousewheel plugin (this is optional) -->
+            <script type="text/javascript" src="/proylecturademo/web/vistamp3/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+            <!-- Add fancyBox main JS and CSS files -->
+            <script type="text/javascript" src="/proylecturademo/web/vistamp3/source/jquery.fancybox.js?v=2.1.5"></script>
+            <link rel="stylesheet" type="text/css" href="/proylecturademo/web/vistamp3/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+            <link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+            <meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+            <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'/>
+            <script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
 	</head>
 	<body>
-		<!---start-wrap---->
-		
-			<!---start-header---->
-			<div class="header">
-				<div class="wrap">
-				<!---start-logo---->
+        <div class="header">
+            <div class="wrap">
 				<div class="logo">
 					<a href="/proylecturademo/"><img src="/proylecturademo/web/images/logoPL.png" title="logo" /></a>
 				</div>
-				<!---end-logo---->
-				<!---start-search---->
 				<div class="top-search-bar">
                     <div class="header-top-nav">
-				      <ul>
-							<li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
-					      	<li><a href="login">Salir</a></li>
-                       </ul>
+				        <ul>
+				        <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
+				        <li><a href="login">Salir</a></li>
+                        </ul>
                     </div>
 				</div>
 				<div class="clear"> </div>
-				</div>
-			</div>
-				<div class="clear"> </div>
+            </div>
+        </div>
+            <div class="clear"> </div>
 				<?php include("menu.php"); ?>
-			<!---end-header---->
 			<div class="wrap">
-					<!---start-content---->
-					<div class="grid_1_of_4 images_1_of_4">
-                       
-                        <div class="button"><span ><a class="fancybox-manual-mp3" href="javascript:;" name="1" style="background: #AB7A20;" href="#">Subir un Audio</a></span></div>
-                        
+                <div class="grid_1_of_4 images_1_of_4">
+                    <div class="button"><span ><a class="fancybox-manual-mp3" href="javascript:;" name="1" style="background: #AB7A20;" href="#">Subir un Audio</a></span></div>
                     </div>
+                    
                     </br></br></br></br></br></br>
         <div class="clients">
             <h5>Generar Audiolibros o Listas de Audiolibros</h5>
@@ -89,9 +72,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    </div>
 				    <div class="grid_1_of_4 images_1_of_4">
 				        <div id="columna_der">
-            	           <h5>Ingrese los datos del Audiolibro</h5>
+            	           <h5>Ingrese los datos de la Compilacion</h5>
                             <div class="cont">
-                                <a>Nombre:</a>
+                                <a>Nombre de Compilacion:</a>
                                 <br />
                                 <input type="text" id="nombrelista" id="libro" />                
                             </div>
@@ -148,7 +131,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                     </select>
                                     <span onclick="verdatosmultipleselect();">tomar datos multiple select</span>
                                     </div>
-                                <div class="button"><span><a href="#">Generar</a></span></div>
+                                <div onClick="grabarLista();" id="btn"  class="button"><span><a href="#">Generar</a></span></div>
                             </div>
                         </div>
 						     
@@ -175,18 +158,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-					<div class="footer"> 
-						<div class="wrap"> 
-						<div class="footer-left">
-							&copy; 2015 ProyectoLectura.com
-						</div>
-						<div class="footer-right">
-							<p> </p>
-						</div>
-						<div class=="clear"> </div>
-					</div>
-					<div class="clear"> </div>
-		<!---end-wrap---->
-		</div>
+					<?php include 'footerlogueado.php';?>
 	</body>
 </html>

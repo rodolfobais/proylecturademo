@@ -16,6 +16,9 @@
 	<div class="clear"> </div>
 </div>
 <div id = "reproductor" style="position: fixed; right: 0px; bottom: 40px; width: 200px;display:none;">
-	<img src = "/proylecturademo/web/images/reproductoraudio.png"/>
+
+        
+        <embed src="/proylecturademo/web/reproductor/dewplayer-playlist.swf" height="200" width="240" wmode="transparent" flashvars="xml=listas/<?php echo $ultimaCreada; ?>.xml&autoplay=0&autoreplay=1&randomplay=0&volume=100"></embed>
+  
 </div>
 				
