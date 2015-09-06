@@ -2,15 +2,8 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 //include_once 'classes/dataBase.class.php';
-
 ?>
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -30,12 +23,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			        maxwidth: 1600, speed: 600
 			      });
 			});
-
 		  </script>
 
-		  <!--input validation-->
+<?php
+	// **********VALIDACION DE INPUTS DEL FORM*********************
 		
-		<?php
 		$nombreErr = $mailErr = $passErr = $pass2Err = "";
 		$nombre = $mail = $pass = $pass2 = "";
 		$error = 0;
@@ -84,16 +76,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   return $data;
 		}
 
-		//Registracion usuario
+		// *************** REGISTRACION DE USUARIO*********************
 
 		session_start();
 		$conn = mysql_connect("localhost","root","");
 		mysql_select_db("librofinal",$conn);
 
-		$nombre = $_POST["nombre"];
-		$mail = $_POST["mail"];
-		$password = $_POST["pass"];
-		$cpassword = $_POST["pass1"];
+		$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
+		$mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
+		$password = isset($_POST["pass"]) ? $_POST["pass"] : "";
+		$cpassword = isset($_POST["pass1"]) ? $_POST["pass1"] : "";
 
 		$query = "select 1 from usuario;";
 		$resultado = mysql_query($query, $conn);
@@ -107,24 +99,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		if($usuarios_existentes  > 0)
 		{
 		    mysql_close($conn);
-		    //header('location: registro');
 		}
-		else{
+		
+		if ($error != 1)
+		{
 			$_SESSION["usuarioLogueado"] = $nombre;
 		    $_SESSION["rolUsuario"] = "nombre";
 			$id_usuario = $filas + 1;
 		    $_SESSION["idUsuarioLogueado"] = $id_usuario;
+			
 			$insert= "insert into usuario(id,nombre, mail, password, admin) values	(".$id_usuario.",'".$nombre."','".$mail."','".$password."','nombre');";
 			$resultado = mysql_query($insert, $conn);
 		    mysql_close($conn);	
-			header('location: home');
+			
+			header('location: registro');
 		}	
+?>
+</head>
 
-
-
-		?>
-
-	</head>
+<!--********************COMIENZO DE BODY************************-->
 	<body>
 		<!---start-wrap---->
 		
@@ -143,7 +136,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					      <div class="header-top-nav">
 						      <ul>
 							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
-							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></li>
 							      
 						      </ul>
 					      </div>
@@ -187,11 +179,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!--End-image-slider---->
 					<!---start-content---->
 					<div class="content">
-						<div class="section group">
+					  <div class="section group">
 						<div class="grid_1_of_4 images_1_of_4">
 							
-						<!-- registracion o login -->
-
+						<!--**************** FORM DE REGISTRACION ****************-->
 
 						<div id="contenedorLogin">
 								<legend><h1 class="titulo">Registro</h1></legend><br> 
@@ -222,8 +213,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							    <div>
 							    	<span id="validacion" style="float: left;text-align: center; color: white; margin-top: 12px;"></span>
 							        <br />
-							        <input id="btn" class="btn" type="submit" value="Registrarse"/>
-							        
+							        <input id="btn" class="btn" type="submit" value="Registrarse"/>					        
 							    </div>
 							 
 							</form>

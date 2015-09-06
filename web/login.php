@@ -1,14 +1,11 @@
 <?php
+
+//require_once 'config.php';
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ?>
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -32,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		 <?php
 
-		 //Input validation
+//-----------------VALIDACION DE INPUTS DEL FORM------------------
 
 		$mailErr = $passErr = "";
 		$mail = $pass = "";
@@ -68,54 +65,47 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		   return $data;
 		}
 
-		// Validacion de usuario
+//----------------- VERIFICACION DE USUARIO Y CREACION DE SESION-----------------
 
-			$conn = mysql_connect("localhost","root","");
-			mysql_select_db("librofinal",$conn);
-	
-			//include_once 'classes/dataBase.class.php';
-			//$conn = new dataBase('');
+		$conn = mysql_connect("localhost","root","");
+		mysql_select_db("librofinal",$conn);
+
+		//include_once 'classes/dataBase.class.php';
+		//$conn = new dataBase('');
 
 		// usuario y contraseña enviados por form
 		$usuario = isset($_POST["mail"]) ? $_POST["mail"] : "";
 		$password = isset($_POST["password"]) ? $_POST["password"] : "";
-	
+		$remember = isset($_POST["remember"]) ? $_POST["remember"] : ""; 
+
 		$sql="SELECT nombre, id, admin FROM usuario WHERE mail ='$usuario' and password='$password'";
 		$result=mysql_query($sql,$conn);
 		$row=mysql_fetch_array($result);
 		$count=mysql_num_rows($result);
-		
-		
-		// si el usuario y password son validos devuelve 1 en count
-		if($count==1)
-		
-{
+
+		//si count es 1 el usuario existe, error == 0 significa que los campos no estan vacios
+		if($count==1 && $error == 0)
+		{
 		session_start();
+		
 			$_SESSION['login_user']=$usuario;
 			$_SESSION["idUsuarioLogueado"] = $row[1];
         	$_SESSION["rolUsuario"] = $row[2];
         	
-        //$cookie_user = $_POST['mail'];
-        $remember = $_POST['remember'];
-		
-		if($remember == 1) 
-		{
-		setcookie($cookie_user, $_POST['mail'], time() + (86400 * 30), "/"); // 86400 = 1 day
-		header('location: home');
-		$message ="Login exitoso!";
+			//Remember == 1 significa que el checkbox recordarme fue tildado
+			if($remember == 1) 
+			{
+			//Creacion de Cookie
+			setcookie($cookie_user, $usuario, time() + (86400 * 30), "/"); // 86400 = 1 day
+			header('location: ../');
+			}
 		}
-		else
-		{
-		header('location: login');
-		$error="Usuario o Password invalido";
-		}
-		
-}
 	mysql_close($conn);
 ?>
+</head>
 
-
-	</head>
+<!--********************COMIENZO DE BODY************************-->
+	
 	<body>
 		<!---start-wrap---->
 		
@@ -134,7 +124,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					      <div class="header-top-nav">
 						      <ul>
 							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
-							      <li><a href="index.php/registro"><span class="botones">Registrarse</span></li>
+							      <li><a href="registro"><span class="botones">Registrarse</span></li>
 							      
 						      </ul>
 					      </div>
@@ -179,22 +169,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="section group">
 						<div class="grid_1_of_4 images_1_of_4">
 							
-						<!-- registracion o login -->
+						<!--**************** FORM DE LOGIN ****************-->
 
 						<div id="contenedorLogin">
 							<h1 class="titulo">Login</h1>
-							<div id="campos">
-							<form id="user_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-						   	<br>
-						   	<span class="label"> E-mail: </span><br><input type="text"  id="mail" name="mail" class="login" size="25" value=""/>
-						   	<span class="error"><?php echo $mailErr;?></span> <br><br>
-						   	<span class="label"> Password: </span><br><input type="password" value=""  id="password" name="password" class="login" size="25"/>
-						   	<span class="error"><?php echo $passErr;?></span> <br><br>
+						<div id="campos">
+							
+				<form id="user_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+							   	
+							   	<br><span class="label"> E-mail: </span><br><input type="text"  id="mail" name="mail" class="login" size="25" value=""/>
+							   	<span class="error"><?php echo $mailErr;?></span> <br><br>
+							   	
+							   	<span class="label"> Password: </span><br><input type="password" value=""  id="password" name="password" class="login" size="25"/>
+							   	<span class="error"><?php echo $passErr;?></span> <br><br>
 
-						   	<input type="checkbox" name="remember" value="1">Recordarme<br><br>
+							   	<input type="checkbox" name="remember" value="1">Recordarme<br><br>
 
-						      <input id="btn" class="btn" type="submit" value="Login"/>
-						      <div id="cargando"></div>
+							    <input id="btn" class="btn" type="submit" value="Login"/>
+						      
+						    	 <div id="cargando"></div>
 
 						      	<div class="links">
 								<?php
@@ -203,12 +196,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							    if ($error != 0){
 							        echo "<p style='color: red;'>E-mail o password incorrecto, por favor, verifique.</p>";
 							    }
-
 							    ?>
 								</div>  
+						  </div> 	
+				 </form>
 
-						   </div> 	
-						   </form>
+
 							<div class="links"><br>
 								<a href="#"> Resetear password</a>
 							</div>           

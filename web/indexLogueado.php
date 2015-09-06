@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 session_start();
 
 $conn = mysql_connect("localhost","root","");
