@@ -15,6 +15,7 @@ ini_set('display_errors', 1);
 		<link rel="stylesheet" href="/proylecturademo/web/css/login-style.css">
 		<script src="/proylecturademo/web/js/jquery.min.js"></script>
 		<script src="/proylecturademo/web/js/responsiveslides.min.js"></script>
+		  
 		  <script>
 		    // You can also use "$(window).load(function() {"
 			    $(function () {
@@ -28,45 +29,97 @@ ini_set('display_errors', 1);
 <?php
 	// **********VALIDACION DE INPUTS DEL FORM*********************
 		
-		$nombreErr = $mailErr = $passErr = $pass2Err = "";
+		$nombreErr = $mailErr = $passErr = $pass2Err = $existeErr = "";
 		$nombre = $mail = $pass = $pass2 = "";
+
+		$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
+		$mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
+		$pass = isset($_POST["pass"]) ? $_POST["pass"] : "";
+		$pass2 = isset($_POST["pass2"]) ? $_POST["pass2"] : "";
+
 		$error = 0;
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		   if (empty($_POST["nombre"])) {
+		
+		if ($_SERVER["REQUEST_METHOD"] == "POST") 
+		{
+		   if ($nombre == "") {
 		     $nombreErr = "Debe completar el nombre";
 		   	 $error = 1;	
-		   } else {
-		     $nombre = test_input($_POST["nombre"]);
-		   }
+		   } 
+		   //else {
+		   //  $nombre = test_input($nombre);
+		   //}
 		   
-		   if (empty($_POST["mail"])) {
+		   if ($mail == "") {
 		     $mailErr = "Debe completar el mail";
 		   	 $error = 1;
 		   } else {
-		          $mail = test_input($_POST["mail"]);
+		        //  $mail = test_input($mail);
 			     // check if e-mail address is well-formed
 			     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-			       $mailErr = "Ingrese un e-mail valido"; }
+			       $mailErr = "Ingrese un e-mail valido"; 
+			       $error = 1;
+			   		}
 		   }
 		     
-		 if (empty($_POST["pass"])) {
+		 if ($pass == "") {
 		     $passErr = "Debe completar el password";
 		   	 $error = 1;
-		   } else {
-		     $pass = test_input($_POST["pass"]);
-		   }
+		   } 
+		   //else {
+		   //  $pass = test_input($pass);
+		   //}
 
-		   if (empty($_POST["pass2"])) {
+		   if ($pass2== "") {
 		     $pass2Err = "Confirme su password";
 		   	 $error = 1;
 		   } else {
-		     $pass2 = test_input($_POST["pass2"]);
-		   	if($pass != $pass2)
+		     //$pass2 = test_input($pass2);
+		   	if($pass != $pass2){
 		   		$pass2Err = "Los password no coinciden";	
+		   		$error = 1;
+		   		}
 		   }
 		
-		   if($error == 0)
-		   	 header('location: login' );	   		
+		 //  if($error == 0)
+		   //	 header('location: login' );	   		
+		
+
+		// *************** REGISTRACION DE USUARIO*********************
+
+				session_start();
+				$conn = mysql_connect("localhost","root","");
+				mysql_select_db("librofinal",$conn);
+
+				$query = "select 1 from usuario;";
+				$resultado = mysql_query($query, $conn);
+				$filas = mysql_num_rows($resultado);
+
+				$query = "select nombre from usuario where nombre = '".$nombre."';";
+				$resultado = mysql_query($query, $conn);
+
+				$usuarios_existentes = mysql_num_rows($resultado);
+
+				if($usuarios_existentes  > 0)
+				{
+					$existeErr = "El usuario ya existe, por favor pruebe nuevamente";
+				    mysql_close($conn);
+				}
+				else
+				{
+					if($error == 0)
+		   			{
+					$_SESSION["usuarioLogueado"] = $nombre;
+				    $_SESSION["rolUsuario"] = "nombre";
+					$id_usuario = $filas + 1;
+				    $_SESSION["idUsuarioLogueado"] = $id_usuario;
+					
+					$insert= "insert into usuario(id,nombre, mail, password) values	('".$id_usuario."','".$nombre."','".$mail."','".$pass."');";
+					$resultado = mysql_query($insert, $conn);
+				    mysql_close($conn);	
+					
+					header('location: login');
+					}	
+				}
 		}
 
 		function test_input($data) {
@@ -76,44 +129,7 @@ ini_set('display_errors', 1);
 		   return $data;
 		}
 
-		// *************** REGISTRACION DE USUARIO*********************
-
-		session_start();
-		$conn = mysql_connect("localhost","root","");
-		mysql_select_db("librofinal",$conn);
-
-		$nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : "";
-		$mail = isset($_POST["mail"]) ? $_POST["mail"] : "";
-		$password = isset($_POST["pass"]) ? $_POST["pass"] : "";
-		$cpassword = isset($_POST["pass1"]) ? $_POST["pass1"] : "";
-
-		$query = "select 1 from usuario;";
-		$resultado = mysql_query($query, $conn);
-		$filas = mysql_num_rows($resultado);
-
-		$query = "select nombre from usuario where nombre = '".$nombre."';";
-		$resultado = mysql_query($query, $conn);
-
-		$usuarios_existentes = mysql_num_rows($resultado);
-
-		if($usuarios_existentes  > 0)
-		{
-		    mysql_close($conn);
-		}
-		
-		if ($error != 1)
-		{
-			$_SESSION["usuarioLogueado"] = $nombre;
-		    $_SESSION["rolUsuario"] = "nombre";
-			$id_usuario = $filas + 1;
-		    $_SESSION["idUsuarioLogueado"] = $id_usuario;
 			
-			$insert= "insert into usuario(id,nombre, mail, password, admin) values	(".$id_usuario.",'".$nombre."','".$mail."','".$password."','nombre');";
-			$resultado = mysql_query($insert, $conn);
-		    mysql_close($conn);	
-			
-			header('location: registro');
-		}	
 ?>
 </head>
 
@@ -135,8 +151,7 @@ ini_set('display_errors', 1);
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
-							      
+							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>					      
 						      </ul>
 					      </div>
 				      </div>
@@ -149,8 +164,7 @@ ini_set('display_errors', 1);
 					<div class="left-nav">
 						<ul>
 							<li><a href=""></a></li>
-							<!--
-							<li class="active"><a href="/proylecturademo/web/index.php">Inicio</a></li>
+							<!--<li class="active"><a href="/proylecturademo/web/index.php">Inicio</a></li>
 							<li><a href="/proylecturademo/web/about.php">Centro de Redaccion</a></li>
 							<li><a href="/proylecturademo/web/clients.php">Audiolibros</a></li>
 							<li><a href="/proylecturademo/web/services.php">Social</a></li>
@@ -206,11 +220,12 @@ ini_set('display_errors', 1);
 							    </div>
 							    <div class="contenedor_reg">
 							        <span class:"label">Confirmar Contrase&ntilde;a:</span><br> 
-							        <input type="password" id="pass1" class="login" name="pass2" value="" size="25"/>
+							        <input type="password" id="pass2" class="login" name="pass2" value="" size="25"/>
 							        <span class="error"><?php echo $pass2Err;?></span> <br> <br> 
 							    </div>
 							   
 							    <div>
+							    	<span class="error"><?php echo $existeErr;?></span> <br> <br> 
 							    	<span id="validacion" style="float: left;text-align: center; color: white; margin-top: 12px;"></span>
 							        <br />
 							        <input id="btn" class="btn" type="submit" value="Registrarse"/>					        

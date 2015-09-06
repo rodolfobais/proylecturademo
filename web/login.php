@@ -31,31 +31,76 @@ ini_set('display_errors', 1);
 
 //-----------------VALIDACION DE INPUTS DEL FORM------------------
 
-		$mailErr = $passErr = "";
-		$mail = $pass = "";
+		$mailErr = $passErr = $userErr = "";
+		$mail = $password = $remember = "";
 		$error = 0;
 
-		if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+		// usuario y contraseña enviados por form
+		$usuario = isset($_POST["mail"]) ? $_POST["mail"] : "";
+		$password = isset($_POST["password"]) ? $_POST["password"] : "";
+		$remember = isset($_POST["remember"]) ? $_POST["remember"] : ""; 
+
+		if ($_SERVER["REQUEST_METHOD"] == "POST") 
+		{
 		   		   
-		   if (empty($_POST["mail"])) {
+		   if ($usuario == "") {
 		     $mailErr = "Email is required";
 		   	 $error = 1;
 		   } else {
-		          $mail = test_input($_POST["mail"]);
+		         // $mail = test_input($_POST["mail"]);
 			     // check if e-mail address is well-formed
-			     if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-			       $mailErr = "Invalid email format"; }
+			     if (!filter_var($usuario , FILTER_VALIDATE_EMAIL)) {
+			       $mailErr = "Invalid email format"; 
+			       $error = 1;
+			   }
 		   }
 		     
-		 if (empty($_POST["password"])) {
-		     $passErr = "Password is required";
-		     $error = 1;
-		   } else {
-		     $pass = test_input($_POST["password"]);
-		   }
+			 if ($password == "") {
+			     $passErr = "Password is required";
+			     $error = 1;
+			   }
+		   // else {
+		    // $pass = test_input($_POST["password"]);
+		   //}
 
 		    if($error == 0)
-		   	 header('location: login' );
+		   	 	{
+		   	 		//----------------- VERIFICACION DE USUARIO Y CREACION DE SESION-----------------
+
+					$conn = mysql_connect("localhost","root","");
+					mysql_select_db("librofinal",$conn);
+
+					$sql="SELECT nombre, id, admin FROM usuario WHERE mail ='$usuario' and password='$password'";
+					$result=mysql_query($sql,$conn);
+					$row=mysql_fetch_array($result);
+					$count=mysql_num_rows($result);
+
+					//si count es 1 el usuario existe, error == 0 significa que los campos no estan vacios
+					if($count==1)
+					{
+						session_start();
+					
+						$_SESSION['login_user']=$usuario;
+						$_SESSION["idUsuarioLogueado"] = $row[1];
+			        	$_SESSION["rolUsuario"] = $row[2];
+			        	
+						//Remember == 1 significa que el checkbox recordarme fue tildado
+						if($remember == 1) 
+						{
+						//Creacion de Cookie
+						setcookie($cookie_user, $usuario, time() + (86400 * 30), "/"); // 86400 = 1 day
+						header('location: indexLogueado');
+						mysql_close($conn);
+						}
+						else{
+							header('location: indexLogueado');
+							mysql_close($conn);
+						}
+					}
+					else
+						$userErr = "Usuario o Password incorrecto, por favor pruebe de nuevo";
+		   	 	}
 		}
 
 		function test_input($data) {
@@ -64,43 +109,6 @@ ini_set('display_errors', 1);
 		   $data = htmlspecialchars($data);
 		   return $data;
 		}
-
-//----------------- VERIFICACION DE USUARIO Y CREACION DE SESION-----------------
-
-		$conn = mysql_connect("localhost","root","");
-		mysql_select_db("librofinal",$conn);
-
-		//include_once 'classes/dataBase.class.php';
-		//$conn = new dataBase('');
-
-		// usuario y contraseña enviados por form
-		$usuario = isset($_POST["mail"]) ? $_POST["mail"] : "";
-		$password = isset($_POST["password"]) ? $_POST["password"] : "";
-		$remember = isset($_POST["remember"]) ? $_POST["remember"] : ""; 
-
-		$sql="SELECT nombre, id, admin FROM usuario WHERE mail ='$usuario' and password='$password'";
-		$result=mysql_query($sql,$conn);
-		$row=mysql_fetch_array($result);
-		$count=mysql_num_rows($result);
-
-		//si count es 1 el usuario existe, error == 0 significa que los campos no estan vacios
-		if($count==1 && $error == 0)
-		{
-		session_start();
-		
-			$_SESSION['login_user']=$usuario;
-			$_SESSION["idUsuarioLogueado"] = $row[1];
-        	$_SESSION["rolUsuario"] = $row[2];
-        	
-			//Remember == 1 significa que el checkbox recordarme fue tildado
-			if($remember == 1) 
-			{
-			//Creacion de Cookie
-			setcookie($cookie_user, $usuario, time() + (86400 * 30), "/"); // 86400 = 1 day
-			header('location: ../');
-			}
-		}
-	mysql_close($conn);
 ?>
 </head>
 
@@ -123,9 +131,7 @@ ini_set('display_errors', 1);
 				      <div class="top-search-bar">
 					      <div class="header-top-nav">
 						      <ul>
-							      <li><a href="index.php/login"><span class="botones">Login</span></a></li>
-							      <li><a href="registro"><span class="botones">Registrarse</span></li>
-							      
+							      <li><a href="/proylecturademo/index.php/registro"><span class="botones">Registrarse</span></li>						      
 						      </ul>
 					      </div>
 				      </div>
@@ -185,6 +191,7 @@ ini_set('display_errors', 1);
 
 							   	<input type="checkbox" name="remember" value="1">Recordarme<br><br>
 
+							   	<span class="error"><?php echo $userErr;?></span> <br><br>
 							    <input id="btn" class="btn" type="submit" value="Login"/>
 						      
 						    	 <div id="cargando"></div>
