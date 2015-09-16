@@ -1,8 +1,32 @@
 <?php
+session_start();
+//echo "<pre>"; print_r($_SESSION); echo "</pre>";die;
+if(isset($_SESSION["login_user"]))
+{
+//	$_SESSION['login_user'] = $usuario;
+	header('location: home');
+}
+//else
+
+
+
+//{
+
+//	if(isset($_COOKIE[$cookie_user]) and $_COOKIE[$cookie_user]==1)
+//	{
+//			$cookie_user = $_COOKIE[$cookie_user];
+//			header('location: home');
+//	}
+
+//else
+//	header('location: login');
+
+
 error_reporting(E_ALL);
 
 //include_once 'classes/dataBase.class.php';
 $db = new dataBase('');
+
 $sql = "SELECT id, nombre FROM libro"; 
 //$result = $db -> QueryFetchArrayASSOC($sql);
 //echo "<pre>"; print_r($result);echo "</pre>";
@@ -141,11 +165,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <!---end-logo---->
 				      <!---start-search---->
 				      <div class="top-search-bar">
+				      	 <div>Bienvenido - <?php  if (isset($_SESSION['login_user'])){ echo $_SESSION['login_user'];}?></div>
+				      	 	<!--else if (isset($_COOKIE[$cookie_user])){ echo $_COOKIE[$cookie_user];}-->
 					      <div class="header-top-nav">
 						      <ul>
 							      
 							      <li><a href="#" class="botones" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
-							      <li><a href="login" class="botones">Logout</a></li>
+							      <li><a href="../" class="botones">Logout</a></li>
 						      </ul>
 					      </div>
 				      </div>

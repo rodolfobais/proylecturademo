@@ -4,6 +4,7 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+$db = new dataBase('');
 ?>
 
 <!DOCTYPE HTML>
@@ -68,8 +69,8 @@ ini_set('display_errors', 1);
 		   	 	{
 		   	 		//----------------- VERIFICACION DE USUARIO Y CREACION DE SESION-----------------
 
-					$conn = mysql_connect("localhost","root","");
-					mysql_select_db("librofinal",$conn);
+					//$conn = mysql_connect("localhost","root","");
+					//mysql_select_db("librofinal",$conn);
 
 					$sql="SELECT nombre, id, admin FROM usuario WHERE mail ='$usuario' and password='$password'";
 					$result=mysql_query($sql,$conn);
@@ -90,16 +91,18 @@ ini_set('display_errors', 1);
 						{
 						//Creacion de Cookie
 						setcookie($cookie_user, $usuario, time() + (86400 * 30), "/"); // 86400 = 1 day
-						header('location: indexLogueado');
+						header('location: home');
 						mysql_close($conn);
 						}
 						else{
-							header('location: indexLogueado');
+							header('location: home');
 							mysql_close($conn);
 						}
 					}
 					else
+					{
 						$userErr = "Usuario o Password incorrecto, por favor pruebe de nuevo";
+		   	 		}
 		   	 	}
 		}
 
