@@ -73,18 +73,20 @@ $db = new dataBase('');
 					//mysql_select_db("librofinal",$conn);
 
 					$sql="SELECT nombre, id, admin FROM usuario WHERE mail ='$usuario' and password='$password'";
-					$result=mysql_query($sql,$conn);
-					$row=mysql_fetch_array($result);
-					$count=mysql_num_rows($result);
-
+					//$result=mysql_query($sql,$conn);
+					//$row=mysql_fetch_array($result);
+					//$count=mysql_num_rows($result);
+					$arrUsuario = $db -> QueryFetchArrayASSOC($sql);
+					
 					//si count es 1 el usuario existe, error == 0 significa que los campos no estan vacios
-					if($count==1)
+					if(count($arrUsuario)==1)
 					{
+						$usuarioBase = $arrUsuario[0];
 						session_start();
 					
-						$_SESSION['login_user']=$usuario;
-						$_SESSION["idUsuarioLogueado"] = $row[1];
-			        	$_SESSION["rolUsuario"] = $row[2];
+						$_SESSION['login_user']=$usuarioBase['nombre'];
+						$_SESSION["idUsuarioLogueado"] = $usuarioBase['id'];
+			        	$_SESSION["rolUsuario"] = $usuarioBase['admin'];
 			        	
 						//Remember == 1 significa que el checkbox recordarme fue tildado
 						if($remember == 1) 
