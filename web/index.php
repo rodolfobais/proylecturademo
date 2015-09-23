@@ -16,6 +16,20 @@ array[1][nombre] -> libro 1342
 */
 
 
+ 
+@session_start();
+if(!isset($_SESSION['login']) || $_SESSION['login']==0){
+header('Location:clients.php');
+}else{
+session_start(); 
+if(isset($_GET['close']) and $_GET['close']==1){ // si vino la variable por get, destruye las variables de session
+	$_SESSION['login']=0;
+	$_SESSION['usuario']=''; 
+	session_destroy();
+}
+
+
+
 
 $arrSliderHeader = array();
 $pos = 0;$pos2 = 0;
@@ -85,6 +99,9 @@ foreach ($misTrabajosArr as $key => $value) {
 }
 $misTrabajos .= '</ul>';
 //echo "<pre>"; print_r($misTrabajosArr);echo "</pre>";
+include('php/servicio.php');
+include_once('php/Audiolibro.php');
+include_once('php/Registro.php');
 ?>
 
 <!--
@@ -106,7 +123,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<link href='web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="web/css/responsiveslides.css">
 		<script src="web/js/jquery.min.js"></script>
-        
+        <script type="text/javascript" src="/proylecturademo/web/js/ajax.js"></script>
+            <script type="text/javascript" src="/proylecturademo/web/js/footer.js"></script>
+            <script type="text/javascript" src="/proylecturademo/web/js/crearlista.js"></script>
+            <script type="text/javascript" src="/proylecturademo/web/js/buscarUsuarios.js"></script>
         
         
         

@@ -1,4 +1,15 @@
+<?php 
+@session_start();
 
+if(isset($_GET['close']) and $_GET['close']==1){ // si vino la variable por get, destruye las variables de session
+	$_SESSION['login']=0;
+	$_SESSION['usuario']=''; 
+	session_destroy();
+}
+include('php/servicio.php');
+include_once('php/Audiolibro.php');
+include_once('php/Registro.php');
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -83,7 +94,7 @@
                                 <br />
                                 <select id="generolista" id="libro" >
                                     <?php 
-                                        include('php/servicio.php');
+                                        
                                         $sql = "SELECT * FROM genero";
                                         $result= query($sql,0);
                                         while($row = mysql_fetch_array($result))
