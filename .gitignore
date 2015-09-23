@@ -1,1 +1,3 @@
 .settings/**
+/nbproject/private/
+/configs/default.conf.php
