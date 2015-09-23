@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+include_once('versession.php');
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 /*
@@ -46,6 +50,7 @@ $sql = "SELECT id, nombre FROM libro";
 				      <!---end-logo---->
 				      <!---start-search---->
 				      <div class="top-search-bar">
+				      	<div>Bienvenido - <?php  if (isset($_SESSION['login_user'])){ echo $_SESSION['login_user'];}else if (isset($_COOKIE[$cookie_user])){ echo $_COOKIE[$cookie_user];}?></div>
 					      <div class="header-top-nav">
 						      <ul>
 							      <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><img src="/proylecturademo/web/images/marker1.png" title="Mensajes" />Mensajes</a></li>
