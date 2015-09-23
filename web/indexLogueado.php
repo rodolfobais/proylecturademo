@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+//echo "<pre>"; print_r($_SESSION); echo "</pre>";die;
+
+include_once('versession.php');
+
 error_reporting(E_ALL);
 //include_once 'classes/dataBase.class.php';
 $db = new dataBase('');
@@ -20,10 +26,12 @@ foreach ($slider_categ as $value) {
 			<tr><td colspan = 3><center><h1>'.$value['descrp'].'</h1></center></td></tr>
 			<tr>';
 	foreach ($slider_mae as $value2) {
+		//echo "<pre>"; print_r($value2['id']);echo "</pre>";
+		//echo "<pre>"; print_r($value['id']);echo "</pre>";
 		$slider .= '
 				<td>
 					<center>
-						<a href="#" onclick = "abrirfancy(\''.$value2['id'].'\', \'vistalibro\')" name="1"><img  src="'.$value2['image'].'"></a><br/><p style="width: 90%"><b style="font-weight: bold;">'.$value2['nombre'].': </b>'.$value2['sinopsis'].'</p>
+						<a class="fancybox-manual-b" href="javascript:;" name="'.$value2['id'].'" onclick = "abrirfancy(\''.$value2['id'].'\', \'vistalibro\')" ><img  src="'.$value2['image'].'">'.$value2['id'].'</a><br/><p style="width: 90%"><b style="font-weight: bold;">'.$value2['nombre'].': </b>'.$value2['sinopsis'].'</p>
 					</center>
 				</td>';
 	}	
@@ -32,6 +40,9 @@ foreach ($slider_categ as $value) {
 		</table>
 	</li>';
 }
+
+
+
 ?>
 
 <!--
@@ -88,10 +99,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      <!---end-logo---->
 				      <!---start-search---->
 				      <div class="top-search-bar">
+				      	<div>Bienvenido - <?php  if (isset($_SESSION['login_user'])){ echo $_SESSION['login_user'];}else if (isset($_COOKIE[$cookie_user])){ echo $_COOKIE[$cookie_user];}?></div>
 					      <div class="header-top-nav">
 						      <ul>
 							      <li><a href="#" onclick = "abrirfancy('mensajes', 'mensajes-fancy')"><span  class="botones">Mensajes</span></a></li>
-							      <li><a href="login"><span  class="botones">Logout</span></a></li>
+							      <li><a href="../web/cerrarsesion.php"><span  class="botones">Logout</span></a></li>
 						      </ul>
 					      </div>
 				      </div>
@@ -121,36 +133,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Mis trabajos</h4>
                             <ul>
-                                <li><a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Proyecto 1</a></li>
+                               
+                                <li><a  class="fancybox-manual-b" href="javascript:;" name="33"><img  title="pointer "/>Proyecto 1</a></li>
 								<li><a href="#"><img  title="pointer "/>Proyecto 2</a></li>
 								<li><a href="#"><img  title="pointer "/>Proyecto 3</a></li>
 								<li><a href="#"><img  title="pointer "/>Proyecto 4</a></li>
-								<li><a href="#"><img  title="pointer "/>Proyecto 5</a></li>
-								<li><a href="#"><img  title="pointer "/>Proyecto 6</a></li>
-                                
+								<a class="more" href="#" style="display:none;"><img  title="pointer "/>Proyecto 5</a>
+								<a class="more" href="#" style="display:none;"><img  title="pointer "/>Proyecto 6</a>
+
+                                <a id="boton" onclick="mostrar()" style="color:blue; text-decoration:underline; cursor:pointer;">Ver mas...</a>
+                            
+                            	<script>
+                            				function mostrar()
+                            				{
+                            					document.getElementById("boton").style.display = "none"; 
+                            					var elements = document.getElementsByClassName("more");
+												for(var i=0; i < elements.length; i++ )
+												{
+										     		elements[i].style.display = "block";
+												}
+							                }
+                            	</script>
+
                             </ul>
 							 
 						     <div class="button"><span></span></div>
 						</div>
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Mi biblioteca</h4>
-                            <li><a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
+                            <li><a  class="fancybox-manual-b" href="javascript:;" name="28"><img  title="pointer "/>Libro Negro de la costura</a></li>
 								<li><a href="#"><img  title="pointer "/>El ultimo de los programadores</a></li>
 								<li><a href="#"><img  title="pointer "/>Ensayo: Resistencia de la gelatina</a></li>
 								<li><a href="#"><img  title="pointer "/>Como programar y no morir virgen</a></li>
 								<li><a href="#"><img  title="pointer "/>Todo sobre la Jardineria</a></li>
 								<li><a href="#"><img  title="pointer "/>Como Mandar una sonda a Pluton</a></li>
-							 
+							 	<a href="#"><img  title="pointer "/>Ver mas...</a>
 						     <div class="button"><span></span></div>
 						</div>
 						<div class="grid_1_of_4 images_1_of_4">
 							<h4>Notificaciones</h4>
                             <ul>
-				                <li><a class="fancybox-manual-z" href="javascript:;" name="1"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Rodolfo Bais</a> Coment&oacute; <a class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>El ultimo de los programadores</a></li></li>
+				                <li><a class="fancybox-manual-z" href="javascript:;" name="21"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Rodolfo Bais</a> Coment&oacute; <a class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>El ultimo de los programadores</a></li></li>
 				                <li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Cristian Ancutza</a> Vot&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Jorge Miranda</a> Comparti&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Libro Negro de la costura</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Esteban Quito</a> Vot&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como Mandar una sonda a Pluton</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Enzo Franchescoli</a> Coment&oacute; <a  class="fancybox-manual-b" href="javascript:;" name="1"><img  title="pointer "/>Como programar y no morir virgen</a></li>
+                            	<a href="#"><img  title="pointer "/>Ver mas...</a>
                             </ul>
 						     
 						</div>

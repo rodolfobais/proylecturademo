@@ -1,14 +1,9 @@
 <?php
 session_start();
 
-$conn = mysql_connect("localhost","root","");
-mysql_select_db("librofinal",$conn);
-
-
-
-			if(isset($_COOKIE[$cookie_user])) {
-				header('location: index.php/home');
-			}
+//echo "<pre>"; print_r($_COOKIE); echo "</pre>";die;
+	if($_SESSION["login_user"] != "") //|| if(isset($_COOKIE[$cookie_user]))
+		header("location: index.php/home");
 
 error_reporting(E_ALL);
 

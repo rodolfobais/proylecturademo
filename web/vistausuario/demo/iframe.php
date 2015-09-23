@@ -25,8 +25,8 @@
 <body>
 
 	<p id="title">
-					<span class="titulos">Usuario:</span> <span>Rodolfo Bais </span><?php echo $tabla['nombre']; ?> <br/>
-					<span class="titulos">Email:</span> <span style="text-decoration: underline; color:blue; cursor: pointer;">rodo.bais@yahoo.com.ar</span> <?php echo $tabla['mail']; ?> <br/>
+					<span class="titulos">Usuario:</span> <span><?php echo $tabla['nombre']; ?> </span><br/>
+					<span class="titulos">Email:</span> <span style="text-decoration: underline; color:blue; cursor: pointer;"> <?php echo $tabla['mail']; ?></span> <br/>
 	</p>
 
 	<p >
@@ -37,13 +37,13 @@
 
 	<img id="image" src= "10_b.jpg" /><br/><br/>
 	
-	<input type="button" class="btn" value="Enviar solicitud" /> | <input type="button" class="btn" value="Denunciar" /><br/><br/>	
+	<a class="btn" href="#" />Enviar Solicitud </a> | <a class="btn" href="#" />Denunciar</a><br/><br/>	
 
 	Amigos: 20<br/><br/>
 
 	<a href="#">Publicaciones</a> :3 <br/><br/> 
 	</p>
-
+	<br/><br/> <br/><br/> 
 	<div id="description">
 		<span class="titulos">Publicaciones:</span>
 			<ul >

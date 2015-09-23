@@ -186,7 +186,7 @@ $db = new dataBase('');
 							<h1 class="titulo">Login</h1>
 						<div id="campos">
 							
-				<form id="user_form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<form id="user_form" action="" method="post">
 							   	
 							   	<br><span class="label"> E-mail: </span><br><input type="text"  id="mail" name="mail" class="login" size="25" value=""/>
 							   	<span class="error"><?php echo $mailErr;?></span> <br><br>

@@ -26,6 +26,8 @@
 	$tabla3 = mysql_fetch_assoc($resultado3);
 	
 	$genero = $tabla3['nombre'];
+
+	//Xecho "<pre>"; print_r($genero); echo "</pre>";die;
 	?>
 
 <!DOCTYPE html>
@@ -54,7 +56,7 @@
 		<a href="javascript:parent.jQuery.fancybox.open({href : '1_b.jpg', title : 'My title'});">Change content</a>
 	-->
 
-	<img id="image" src= "a33.jpg" > /><br/><br/>
+	<img id="image" src= <?php echo $id. "_b.jpg" ?> /><br/><br/>
 	
 	<a href="#">+1</a>	Votos: 0<br/><br/>
 

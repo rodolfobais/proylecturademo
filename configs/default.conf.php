@@ -3,7 +3,7 @@
 //base de datos
 $arrConf['hostDB_NA']  = 'localhost';
 $arrConf['userDB_NA'] = 'root';
-$arrConf['passwordDB_NA'] = 'root';
+$arrConf['passwordDB_NA'] = '';
 $arrConf['nameDB_NA'] = 'librofinal';
 
 // define ('_COMPANY','Nuevo Amanecer');
