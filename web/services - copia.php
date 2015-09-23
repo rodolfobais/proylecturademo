@@ -1,7 +1,10 @@
 <?php
+<<<<<<< HEAD:web/services - copia.php
 session_start();
 
 include_once('versession.php');
+=======
+>>>>>>> 2ee0f797169ae21368848879d999c75ee8ad280f:web/services.php
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -10,6 +13,13 @@ ini_set('display_errors', 1);
 $db = new dataBase('');
 $sql = "SELECT id, nombre FROM libro"; 
 */
+
+session_start();
+include_once('php/servicio.php');
+include_once('php/Audiolibro.php');
+include_once('php/Registro.php');
+include_once('php/Usuarios.php');
+
 ?>
 
 <!DOCTYPE HTML>
@@ -21,6 +31,8 @@ $sql = "SELECT id, nombre FROM libro";
 		<link href='/proylecturademo/web/css/font-Ropa+Sans.css' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="/proylecturademo/web/css/responsiveslides.css">
 		<link rel="stylesheet" href="/proylecturademo/web/css/login-style.css">
+        <script type="text/javascript" src="/proylecturademo/web/js/ajax.js"></script>
+        <script type="text/javascript" src="/proylecturademo/web/js/buscarUsuarios.js"></script>
 		<script src="/proylecturademo/web/js/jquery.min.js"></script>
 		<script src="/proylecturademo/web/js/responsiveslides.min.js"></script>
 		  <script>
@@ -70,35 +82,36 @@ $sql = "SELECT id, nombre FROM libro";
 					<!--End-image-slider---->
 					<!---start-content---->
 					<div class="content">
-
 							<h4 class="titulo"> Social</h4>
-								<div class="seccion1">
-									<h4 class="innertitle">&iquest;A qu&eacute; usuario buscas?</h4>
-
-									<input type="text" id="usuariobuscado" class="usuariobuscado" placeholder="Ingrese el nombre de usuario" />
-
-									<span id="btn" class="btnbuscar" onclick="buscarUnUsuario();">Buscar</span>
-
-									<div id="resultadosDeUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;"></div>
-									<div id="resultadosDeAgregarUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;color:#666;"></div>
-									
+				            <div class="seccion1">
+								<h4 style="font-size:15px;float:left;margin-left:20px;margin-top:20px;padding:0px;margin-bottom:0px;">¿A qu&eacute; usuario buscas?</h4>
+                                <input type="text" id="usuariobuscado" placeholder="Ingrese el nombre de usuario" style="float:left;width:200px;height:20px;clear:both;margin-top:20px;margin-left:20px;" />
+                                <span id="btn" style="float:left;clear:both;margin-left:20px;margin-top:20px;" onclick="buscarUnUsuario();">Buscar</span>
+                                <div id="resultadosDeUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;">
+</div>
+                                <div id="resultadosDeAgregarUsuario" style="float:left;clear:both;margin-left:20px;margin-top:20px;color:#666;">
+                                </div>
 								</div>		
 						
 								<div class="seccion2">
-									<h4 class="innertitle"> Mis amistades</h4>
+									<h4 style="font-size:15px;float:left;margin-left:20px;margin-top:20px;padding:0px;margin-bottom:0px;">
+Mis amistades
+</h4>
+<div style="float:left;margin-left:20px;margin-top:20px;clear:both;">
+<?php 
 
-										<div class="amigos">
-											<ul style="list-style-type:circle">
-											  <li><a class="link" href="#">Martin</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											  <li><a class="link" href="#">Facundo</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											  <li><a class="link" href="#">Laura</a><img src="/proylecturademo/web/images/config.ico" style="width:15px; height:15px; margin-left:3px; cursor:pointer;"/> </li>
-											</ul>
-										</div>
+$Usuario = new Usuarios();
+$amistades = $Usuario->traerAmistades($_SESSION['login']);
+echo $amistades;
+?>
+</div>
 								</div>
 						
 								<div class="seccion3">
-									<h4 class="innertitle">	Mis solicitudes pendientes</h4>
-										<div class="amigos"> Invitacion de Carlos pendiente de aceptacion/rechazo.	</div>
+									<h4 style="font-size:15px;float:left;margin-left:20px;margin-top:20px;padding:0px;margin-bottom:0px;clear:both;">
+Mis solicitudes pendientes
+</h4>
+
 								</div>
 
 						<div class="section group">
