@@ -1,11 +1,8 @@
 <?php 
-@session_start();
+session_start();
+//echo "<pre>"; print_r($_SESSION); echo "</pre>";die;
 
-if(isset($_GET['close']) and $_GET['close']==1){ // si vino la variable por get, destruye las variables de session
-	$_SESSION['login']=0;
-	$_SESSION['usuario']=''; 
-	session_destroy();
-}
+include_once('php/versession.php');
 include('php/servicio.php');
 include_once('php/Audiolibro.php');
 include_once('php/Registro.php');

@@ -1,8 +1,12 @@
+
+<script type="text/javascript" src="/proylecturademo/web/js/ajax.js"></script>
+<script type="text/javascript" src="/proylecturademo/web/js/footer.js"></script>
 <script type="text/javascript">
 	function abrirReproductor(){
 		$("#reproductor").toggle();
 	}
 </script>
+<link href="/proylecturademo/web/css/style.css" rel="stylesheet" type="text/css"  media="all" />
 <div class="footer"> 
 	<div class="wrap"> 
 		<div class="footer-left">
