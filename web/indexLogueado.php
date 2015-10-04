@@ -200,7 +200,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-				
-				<?php include 'footerlogueado.php';?>
 	</body>
 </html>

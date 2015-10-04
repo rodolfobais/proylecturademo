@@ -10,7 +10,8 @@ $arrPages = array();
 
 $arrPages['index']['php'] = "indexsinlog.php";
 $arrPages['login']['php'] = "login.php";
-$arrPages['home']['php'] = "homeframe.php";$arrPages['home']['nombreenmenu'] = "Inicio";
+$arrPages['home']['php'] = "indexLogueado.php";$arrPages['home']['nombreenmenu'] = "Inicio";
+$arrPages['homeframe']['php'] = "homeframe.php";$arrPages['home']['nombreenmenu'] = "Inicio";
 $arrPages['registro']['php'] = "registro.php";
 $arrPages['redactor']['php'] = "redactor.php";$arrPages['redactor']['nombreenmenu'] = "Centro de redaccion";
 $arrPages['audiolibros']['php'] = "clients.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";

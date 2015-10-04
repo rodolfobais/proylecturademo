@@ -1,5 +1,4 @@
 <?php
-
 	session_start();
 
 	if($_SESSION["login_user"] == "" && $_COOKIE[$cookie_user] =="")
