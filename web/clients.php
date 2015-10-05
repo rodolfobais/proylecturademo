@@ -1,19 +1,16 @@
 <?php 
-@session_start();
-
-if(isset($_GET['close']) and $_GET['close']==1){ // si vino la variable por get, destruye las variables de session
-	$_SESSION['login']=0;
-	$_SESSION['usuario']=''; 
-	session_destroy();
-}
+global $arrPages;
+include_once('php/versession.php');
 include('php/servicio.php');
 include_once('php/Audiolibro.php');
-include_once('php/Registro.php');
+include_once('php/audiolibro_gw.php');
+include('php/Registro.php');
 ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>legend Website Template | clients :: W3layouts</title>
+            
             <script src="/proylecturademo/web/js/jquery.min.js"></script>
             <script type="text/javascript" src="/proylecturademo/web/js/ajax.js"></script>
             <script type="text/javascript" src="/proylecturademo/web/js/footer.js"></script>
@@ -28,6 +25,7 @@ include_once('php/Registro.php');
             <meta name="keywords" content="legend iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
             <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet' type='text/css'/>
             <script type="text/javascript" src="/proylecturademo/web/js/fancylibro.js"></script>
+        
 	</head>
 	<body>
         <div class="header">
@@ -108,7 +106,7 @@ include_once('php/Registro.php');
                             <div class="cont">
                                 <a>Privacidad:</a>
                                 <br />
-                                <select >
+                                <select id="privacidadlista"  onchange="preguntosicomparte();">
                                     <option value="0">Privada (s&oacute;lo yo)</option>
                                     <option value="1">P&uacute;blica</option>
                                     <option value="2">Compartida</option>
@@ -120,11 +118,11 @@ include_once('php/Registro.php');
                                     <select id="compartidaconamigos" name="compartidaconamigos" multiple height="40">
                                          <?php 
                                             @session_start();
-                                            $sql = "SELECT * FROM amistad where (id_usuario=".$_SESSION['login']." or                                                       id_usuarioamigo=".$_SESSION['login'].") and estado =1";
+                                            $sql = "SELECT * FROM amistad where (id_usuario=".$_SESSION['login_user']." or                                                       id_usuarioamigo=".$_SESSION['login_user'].") and estado =1";
                                             $result= query($sql,0);
                                             while($row = mysql_fetch_array($result))
                                                 {
-                                                    if($row['id_usuario']==$_SESSION['login']){
+                                                    if($row['id_usuario']==$_SESSION['login_user']){
                                                         $sql = "SELECT * FROM usuario where id=".$row['id_usuarioamigo'];
                                                         $result2= query($sql,0);
                                                         while($row2 = mysql_fetch_array($result2)){
@@ -144,6 +142,9 @@ include_once('php/Registro.php');
                                     </select>
                                     <span onclick="verdatosmultipleselect();">tomar datos multiple select</span>
                                     </div>
+                                    <script >
+                                    var session = <?php echo $_SESSION["login_user"];?>;
+                                    </script>
                                 <div onClick="grabarLista();" id="btn"  class="button"><span><a href="#">Generar</a></span></div>
                             </div>
                         </div>
@@ -171,6 +172,5 @@ include_once('php/Registro.php');
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-					<?php include 'footerlogueado.php';?>
 	</body>
 </html>

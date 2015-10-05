@@ -4,6 +4,11 @@ session_start();
 //echo "<pre>"; print_r($_SESSION); echo "</pre>";die;
 
 include_once('versession.php');
+include_once('../classes/dataBase.class.php');
+include '../configs/default.conf.php';
+include "../app/config.php";
+
+global $arrPages;
 
 error_reporting(E_ALL);
 //include_once 'classes/dataBase.class.php';
@@ -196,7 +201,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!---End-content---->
 					<div class="clear"> </div>
 				</div>
-				
-				<?php include 'footerlogueado.php';?>
 	</body>
 </html>

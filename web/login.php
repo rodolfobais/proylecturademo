@@ -93,11 +93,11 @@ $db = new dataBase('');
 						{
 						//Creacion de Cookie
 						setcookie($cookie_user, $usuario, time() + (86400 * 30), "/"); // 86400 = 1 day
-						header('location: home');
+						header('location: homeframe');
 						mysql_close($conn);
 						}
 						else{
-							header('location: home');
+							header('location: homeframe');
 							mysql_close($conn);
 						}
 					}
