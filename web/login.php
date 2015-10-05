@@ -228,10 +228,10 @@ $db = new dataBase('');
 					<div class="footer"> 
 						<div class="wrap"> 
 						<div class="footer-left">
-							Users online: pepe argento | Juana de arco | Jorgito
+							<p>&copy; 2015 ProyectoLectura.com</p> 
 						</div>
 						<div class="footer-right">
-							<p>REPRODUCTOR (no asociado al aparato)</p>
+							
 						</div>
 						<div class=="clear"> </div>
 					</div>

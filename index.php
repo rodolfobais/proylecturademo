@@ -23,10 +23,12 @@ $arrPages['home']['php'] = "indexLogueado.php";$arrPages['home']['nombreenmenu']
 $arrPages['registro']['php'] = "registro.php";
 $arrPages['redactor']['php'] = "redactor.php";$arrPages['redactor']['nombreenmenu'] = "Centro de redaccion";
 $arrPages['audiolibros']['php'] = "clients.php";$arrPages['audiolibros']['nombreenmenu'] = "Audio libros";
+$arrPages['libros']['php'] = "libros.php";$arrPages['libros']['nombreenmenu'] = "Libros";
 $arrPages['social']['php'] = "social.php";$arrPages['social']['nombreenmenu'] = "Social";
 $arrPages['administrador']['php'] = "administrador.php";$arrPages['administrador']['nombreenmenu'] = "Administrador";
 $arrPages['logout']['php'] = "indexsinlog.php";
 $arrPages['mensajes']['php'] = "mensajes.php";
+$arrPages['single']['php'] = "single.php";
 
 if ($browser_t == "mobile") {
 	$browser_t = "smartphone";

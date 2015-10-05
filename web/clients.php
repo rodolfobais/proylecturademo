@@ -51,6 +51,7 @@ include_once('php/Registro.php');
 			<div class="wrap">
                 <div class="grid_1_of_4 images_1_of_4">
                     <div class="button"><span ><a class="fancybox-manual-mp3" href="javascript:;" name="1" style="background: #AB7A20;" href="#">Subir un Audio</a></span></div>
+                    
                     </div>
                     
                     </br></br></br></br></br></br>
@@ -66,6 +67,7 @@ include_once('php/Registro.php');
                             <div onClick="buscar();" id="btn" class="button">
                                 <span><a href="#">Buscar</a></span>
                             </div> <!--Considerar si se cambia separando con <a>-->
+                                <br>
                                 <h5>Resultados encontrados:</h5>
                             <div id="audiolibrosencontrados">	
                                 </br></br>

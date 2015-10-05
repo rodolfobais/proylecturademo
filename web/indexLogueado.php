@@ -141,8 +141,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<a class="more" href="#" style="display:none;"><img  title="pointer "/>Proyecto 5</a>
 								<a class="more" href="#" style="display:none;"><img  title="pointer "/>Proyecto 6</a>
 
-                                <a id="boton" onclick="mostrar()" style="color:blue; text-decoration:underline; cursor:pointer;">Ver mas...</a>
-                            
+                                <a href="/proylecturademo/web/trabajos.php"><img  title="pointer "/>Ver mas...</a>
+                            <!--
                             	<script>
                             				function mostrar()
                             				{
@@ -154,7 +154,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 												}
 							                }
                             	</script>
-
+								-->
                             </ul>
 							 
 						     <div class="button"><span></span></div>
@@ -167,7 +167,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="#"><img  title="pointer "/>Como programar y no morir virgen</a></li>
 								<li><a href="#"><img  title="pointer "/>Todo sobre la Jardineria</a></li>
 								<li><a href="#"><img  title="pointer "/>Como Mandar una sonda a Pluton</a></li>
-							 	<a href="#"><img  title="pointer "/>Ver mas...</a>
+							 	<a href="/proylecturademo/web/single.php"><img  title="pointer "/>Ver mas...</a>
 						     <div class="button"><span></span></div>
 						</div>
 						<div class="grid_1_of_4 images_1_of_4">
@@ -187,6 +187,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Martin: Alguien quiere participar en una investigaci&oacute;n sobre nahuelito?</a></li>
 								<li><a href="#"><img src="/proylecturademo/web/images/marker2.jpg" title="pointer "/>Jorge Miranda: Necesito ayuda en un cuento sobre la historia de la UNLaM, alg&uacute;n interesado?</a></li>
+								<a href="/proylecturademo/web/clasificados.php"><img  title="pointer "/>Ver clasificados...</a>
 							</ul>
 						</div>
 					</div>

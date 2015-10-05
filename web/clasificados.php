@@ -1,39 +1,39 @@
 <?php
-session_start();
+//session_start();
 //echo "<pre>"; print_r($_SESSION); echo "</pre>";die;
 
 include_once('versession.php');
 //include_once 'classes/dataBase.class.php';
 
 $db = new dataBase('');
-$sql ="SELECT l.nombre as nombreLibro ,l.fecha, a.nombre as nombreAutor, g.nombre as nombreGenero
-		FROM libro as l 
-	   INNER JOIN autor as a ON l.id_autor = a.id
-	   INNER JOIN genero as g ON l.id_genero = g.id";
-$arrlibro = $db -> QueryFetchArrayASSOC($sql);
+$sql ="SELECT c.descripcion, g.nombre as nombreGenero, u.nombre as nombreUsuario, c.fecha
+		FROM clasificados as c 
+	   INNER JOIN usuario as u ON c.id_autor = u.id
+	   INNER JOIN genero as g ON c.id_genero = g.id";
+$arrclasificado = $db -> QueryFetchArrayASSOC($sql);
 
 //echo "<pre>"; print_r($arrlibro[0]); echo "</pre>";//die;
 
-$tablaLibros = "<table border = 1>
+$tablaClasificados= "<table border = 1>
 
 <tr>
-		<td>Libro</td>
-		<td>Autor</td>
+		<td>Descripcion</td>
+		<td>Usuario</td>
 		<td>Genero</td>
 		<td>Fecha</td>
 
 </tr>";
-foreach ($arrlibro as $value) {
-	$tablaLibros .= "
+foreach ($arrclasificado as $value) {
+	$tablaClasificados .= "
 	<tr>
-		<td>".$value['nombreLibro']."</td>
-		<td>".$value['nombreAutor']."</td>
+		<td>".$value['descripcion']."</td>
+		<td>".$value['nombreUsuario']."</td>
 		<td>".$value['nombreGenero']."</td>
 		<td>".$value['fecha']."</td>
 		
 	</tr>";
 }
-$tablaLibros .= "</table>";
+$tablaClasificados .= "</table>";
 //echo $value['nombreAutor'];
 ?>
 
@@ -90,7 +90,7 @@ $tablaLibros .= "</table>";
 						<div class="singlelink">
 							<div class="section group example">
 							<div class="col_1_of_1 span_1_of_1">
-							 <?php echo $tablaLibros;?>
+							 <?php echo $$tablaClasificados;?>
 
 						    </div>
 					    </div>
